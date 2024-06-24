@@ -6,14 +6,14 @@
 #include "math.h"
 
 
-#define CSn1_H   GPIO_SetBits(GPIOB, GPIO_Pin_3 );		//PB3:CSN1						//SetBits设置IO高电平
+#define CSn1_H   GPIO_SetBits(GPIOB, GPIO_Pin_3 );		//PB3:CSN1 						//SetBits设置IO高电平
 #define CSn1_L   GPIO_ResetBits(GPIOB, GPIO_Pin_3 );												//ResetBits设置IO低电平
-#define DO1      GPIO_ReadInputData(GPIOB)&0x0010			//PB4:DIO1
+#define DO1      GPIO_ReadInputData(GPIOB)&0x0010		//PB4:DIO1    
 #define CLK1_H   GPIO_SetBits(GPIOB, GPIO_Pin_5 );	
 #define CLK1_L   GPIO_ResetBits(GPIOB, GPIO_Pin_5 );	//PB5:clk1	
 #define PROG1_H  GPIO_SetBits(GPIOB, GPIO_Pin_6 );	
-#define PROG1_L  GPIO_ResetBits(GPIOB, GPIO_Pin_6 );	//PB6:ldc1
-#define PROG1    GPIO_ReadInputData(GPIOB)&0x2000			//PB6:DIO1
+#define PROG1_L  GPIO_ResetBits(GPIOB, GPIO_Pin_6 );	//PB13:ldc1
+#define PROG1    GPIO_ReadInputData(GPIOB)&0x2000			//PB13:DIO1
 
 
 /// ---------------------------------------------------------
@@ -27,12 +27,22 @@
 #define CLK2_H    GPIO_SetBits(GPIOC, GPIO_Pin_3 );
 #define CLK2_L		GPIO_ResetBits(GPIOC, GPIO_Pin_3 );		//PC3
 
+///////////////////////////////////////////////////////////////
+
 #define CSn3_H		GPIO_SetBits(GPIOB, GPIO_Pin_12 );		//PB12	
 #define CSn3_L		GPIO_ResetBits(GPIOB, GPIO_Pin_12 );				
 #define DO3				GPIO_ReadInputData(GPIOC)&0x0040			//PC6				
 #define CLK3_H    GPIO_SetBits(GPIOB, GPIO_Pin_13 );
 #define CLK3_L		GPIO_ResetBits(GPIOB, GPIO_Pin_13 );	//PB13
 
+/// ---------------------------------------------------------
+///	The fourth finger 
+/// ---------------------------------------------------------
+#define CSn4_H		GPIO_SetBits(GPIOB, GPIO_Pin_2 );		//PB2
+#define CSn4_L		GPIO_ResetBits(GPIOB, GPIO_Pin_2 );		
+#define DO4				GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_0)	//PB0
+#define CLK4_H    GPIO_SetBits(GPIOB, GPIO_Pin_1 );
+#define CLK4_L		GPIO_ResetBits(GPIOB, GPIO_Pin_1 );	//PB1
 
 
 void send_bytes(void); 															//发送单传感器数据字节串
@@ -43,8 +53,9 @@ unsigned int read_otp(void);
 void Sensor_GPIO(void);															//初始化IO口
 void GetDegree(void);																//获得传感器实时角度
 void GetDegreeo(void);															//获得传感器初始角度
+void test_out(void);
 void LED_Ctl(char LEDdata);
-void GetDegree_(void);
+
 
 #endif
 

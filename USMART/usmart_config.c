@@ -6,9 +6,8 @@
 #include "delay.h"	
 #include "usart.h"		
 #include "sys.h" 	
+#include "sensor.h" 
   
-#include "sensor.h"
-#include "pwm.h"
 //函数名列表初始化(用户自己添加)
 //用户直接在这里输入要执行的函数名及其查找串
 struct _m_usmart_nametab usmart_nametab[]=
@@ -18,18 +17,19 @@ struct _m_usmart_nametab usmart_nametab[]=
 	(void*)write_addr,"void write_addr(u32 addr,u32 val)",	 
 #endif		   
 	(void*)delay_ms,"void delay_ms(u16 nms)",
+		
+	(void*)test_out,"void test_out(u16 nms)",
+	(void*)GetDegree,"void GetDegree(u16 nms)",
+	(void*)GetDegreeo,"void GetDegreeo(u16 nms)",
+		
  	(void*)delay_us,"void delay_us(u32 nus)", 
 	(void*)ETH_ReadPHYRegister,"uint16_t ETH_ReadPHYRegister(uint16_t PHYAddress, uint16_t PHYReg)",
 	(void*)ETH_WritePHYRegister,"uint32_t ETH_WritePHYRegister(uint16_t PHYAddress, uint16_t PHYReg, uint16_t PHYValue)",
-	(void*)PWM_SetCompareLow,"void PWM_SetCompareLow(void)",
-	(void*)PWM_SetCompareMid,"void PWM_SetCompareMid(void)",
-	(void*)PWM_SetCompareHigh,"void PWM_SetCompareHigh(void)",
-	(void*)PWM_SetCompare,"void PWM_SetCompare( u8 ch, u16 count)",
-	(void*) GetDegreeo,"void GetDegreeo(void)",
+			
 };						
 
 
-/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////void test_out(void)
 //函数控制管理器初始化
 //得到各个受控函数的名字
 //得到函数总数量

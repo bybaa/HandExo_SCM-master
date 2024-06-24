@@ -70,4 +70,3 @@
 ..\obj\udp_demo.o: ..\LWIP\arch/sys_arch.h
 ..\obj\udp_demo.o: ..\HARDWARE\SENSOR\sensor.h
 ..\obj\udp_demo.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
-..\obj\udp_demo.o: ..\HARDWARE\LCD\lcd.h

@@ -72,6 +72,7 @@ u8 *sys_cmd_tab[]=
 };	    
 //处理系统指令
 //0,成功处理;其他,错误代码;
+
 u8 usmart_sys_cmd_exe(u8 *str)
 {
 	u8 i;

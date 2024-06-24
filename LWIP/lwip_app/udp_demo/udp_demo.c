@@ -7,7 +7,6 @@
 #include "lwip/lwip_sys.h"
 #include "string.h"
 #include "sensor.h"
-#include "lcd.h"
 //#include "get_pose.h"
 
 
@@ -37,7 +36,8 @@ static void udp_thread(void *arg)
 	extern float angle[6];
 	extern float angle2[6];
 	extern float angle3[6];	
-	extern float angle_udp[18];
+	extern float angle4[6];	
+	extern float angle_udp[24];
 	
 	OS_CPU_SR cpu_sr;
 	err_t err;
@@ -50,7 +50,7 @@ static void udp_thread(void *arg)
 	
 	LWIP_UNUSED_ARG(arg);
 	udpconn = netconn_new(NETCONN_UDP);  																																			//创建一个UDP链接
-	udpconn->recv_timeout = 1;  
+	udpconn->recv_timeout = 1;
 	
 	if(udpconn != NULL)  																																											//创建UDP连接成功
 	{
@@ -83,7 +83,6 @@ static void udp_thread(void *arg)
 					if(err != ERR_OK)
 					{
 						printf("发送失败\r\n");
-						LCD_ShowString(30,510,210,16,16,"123");
 						netbuf_delete(sentbuf);      //删除buf
 					}
 					udp_flag &= ~LWIP_SEND_DATA;	//清除数据发送标志

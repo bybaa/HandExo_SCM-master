@@ -63,7 +63,3 @@
 ..\obj\main.o: ..\LWIP\lwip_app\udp_demo\udp_demo.h
 ..\obj\main.o: ..\HARDWARE\SENSOR\sensor.h
 ..\obj\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
-..\obj\main.o: ..\HARDWARE\PWM\pwm.h
-..\obj\main.o: ..\HARDWARE\PID\pid.h
-..\obj\main.o: ..\HARDWARE\ODistance\ODcalc.h
-..\obj\main.o: ..\HARDWARE\ADC\adc.h
