@@ -7,12 +7,12 @@
 ..\obj\ethernetif.o: ..\LWIP\lwip-1.4.1\src\include\lwip/arch.h
 ..\obj\ethernetif.o: ..\LWIP\arch/cc.h
 ..\obj\ethernetif.o: ..\LWIP\arch/cpu.h
-..\obj\ethernetif.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\ethernetif.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\ethernetif.o: ..\UCOSII\CONFIG\includes.h
-..\obj\ethernetif.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-..\obj\ethernetif.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
-..\obj\ethernetif.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-..\obj\ethernetif.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\ethernetif.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\obj\ethernetif.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\obj\ethernetif.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\ethernetif.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdarg.h
 ..\obj\ethernetif.o: ..\UCOSII\CORE\ucos_ii.h
 ..\obj\ethernetif.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\ethernetif.o: ..\UCOSII\CONFIG\os_cfg.h
@@ -20,7 +20,7 @@
 ..\obj\ethernetif.o: ..\SYSTEM\sys\sys.h
 ..\obj\ethernetif.o: ..\USER\stm32f4xx.h
 ..\obj\ethernetif.o: ..\CORE\core_cm4.h
-..\obj\ethernetif.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\ethernetif.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\ethernetif.o: ..\CORE\core_cmInstr.h
 ..\obj\ethernetif.o: ..\CORE\core_cmFunc.h
 ..\obj\ethernetif.o: ..\CORE\core_cm4_simd.h

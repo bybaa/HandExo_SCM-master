@@ -6,12 +6,12 @@
 ..\obj\netdb.o: ..\LWIP\lwip-1.4.1\src\include\lwip/arch.h
 ..\obj\netdb.o: ..\LWIP\arch/cc.h
 ..\obj\netdb.o: ..\LWIP\arch/cpu.h
-..\obj\netdb.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\netdb.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\netdb.o: ..\UCOSII\CONFIG\includes.h
-..\obj\netdb.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-..\obj\netdb.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
-..\obj\netdb.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-..\obj\netdb.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\netdb.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\obj\netdb.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\obj\netdb.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\netdb.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdarg.h
 ..\obj\netdb.o: ..\UCOSII\CORE\ucos_ii.h
 ..\obj\netdb.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\netdb.o: ..\UCOSII\CONFIG\os_cfg.h
@@ -19,7 +19,7 @@
 ..\obj\netdb.o: ..\SYSTEM\sys\sys.h
 ..\obj\netdb.o: ..\USER\stm32f4xx.h
 ..\obj\netdb.o: ..\CORE\core_cm4.h
-..\obj\netdb.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\netdb.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\netdb.o: ..\CORE\core_cmInstr.h
 ..\obj\netdb.o: ..\CORE\core_cmFunc.h
 ..\obj\netdb.o: ..\CORE\core_cm4_simd.h

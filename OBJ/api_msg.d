@@ -5,12 +5,12 @@
 ..\obj\api_msg.o: ..\LWIP\lwip-1.4.1\src\include\lwip/arch.h
 ..\obj\api_msg.o: ..\LWIP\arch/cc.h
 ..\obj\api_msg.o: ..\LWIP\arch/cpu.h
-..\obj\api_msg.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\api_msg.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\api_msg.o: ..\UCOSII\CONFIG\includes.h
-..\obj\api_msg.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-..\obj\api_msg.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
-..\obj\api_msg.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-..\obj\api_msg.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\api_msg.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\obj\api_msg.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\obj\api_msg.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\api_msg.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdarg.h
 ..\obj\api_msg.o: ..\UCOSII\CORE\ucos_ii.h
 ..\obj\api_msg.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\api_msg.o: ..\UCOSII\CONFIG\os_cfg.h
@@ -18,7 +18,7 @@
 ..\obj\api_msg.o: ..\SYSTEM\sys\sys.h
 ..\obj\api_msg.o: ..\USER\stm32f4xx.h
 ..\obj\api_msg.o: ..\CORE\core_cm4.h
-..\obj\api_msg.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\api_msg.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\api_msg.o: ..\CORE\core_cmInstr.h
 ..\obj\api_msg.o: ..\CORE\core_cmFunc.h
 ..\obj\api_msg.o: ..\CORE\core_cm4_simd.h
@@ -53,7 +53,7 @@
 ..\obj\api_msg.o: ..\FWLIB\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
 ..\obj\api_msg.o: ..\LWIP\lwip-1.4.1\src\include\lwip/opt.h
 ..\obj\api_msg.o: ..\LWIP\lwip-1.4.1\src\include\lwip/api_msg.h
-..\obj\api_msg.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+..\obj\api_msg.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stddef.h
 ..\obj\api_msg.o: ..\LWIP\lwip-1.4.1\src\include\ipv4\lwip/ip_addr.h
 ..\obj\api_msg.o: ..\LWIP\lwip-1.4.1\src\include\lwip/def.h
 ..\obj\api_msg.o: ..\LWIP\lwip-1.4.1\src\include\lwip/err.h

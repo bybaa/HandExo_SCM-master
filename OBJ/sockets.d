@@ -5,12 +5,12 @@
 ..\obj\sockets.o: ..\LWIP\lwip-1.4.1\src\include\lwip/arch.h
 ..\obj\sockets.o: ..\LWIP\arch/cc.h
 ..\obj\sockets.o: ..\LWIP\arch/cpu.h
-..\obj\sockets.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\sockets.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\sockets.o: ..\UCOSII\CONFIG\includes.h
-..\obj\sockets.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-..\obj\sockets.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
-..\obj\sockets.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-..\obj\sockets.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\sockets.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\obj\sockets.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\obj\sockets.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\sockets.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdarg.h
 ..\obj\sockets.o: ..\UCOSII\CORE\ucos_ii.h
 ..\obj\sockets.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\sockets.o: ..\UCOSII\CONFIG\os_cfg.h
@@ -18,7 +18,7 @@
 ..\obj\sockets.o: ..\SYSTEM\sys\sys.h
 ..\obj\sockets.o: ..\USER\stm32f4xx.h
 ..\obj\sockets.o: ..\CORE\core_cm4.h
-..\obj\sockets.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\sockets.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\sockets.o: ..\CORE\core_cmInstr.h
 ..\obj\sockets.o: ..\CORE\core_cmFunc.h
 ..\obj\sockets.o: ..\CORE\core_cm4_simd.h
@@ -53,7 +53,7 @@
 ..\obj\sockets.o: ..\FWLIB\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
 ..\obj\sockets.o: ..\LWIP\lwip-1.4.1\src\include\lwip/opt.h
 ..\obj\sockets.o: ..\LWIP\lwip-1.4.1\src\include\lwip/sockets.h
-..\obj\sockets.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+..\obj\sockets.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stddef.h
 ..\obj\sockets.o: ..\LWIP\lwip-1.4.1\src\include\ipv4\lwip/ip_addr.h
 ..\obj\sockets.o: ..\LWIP\lwip-1.4.1\src\include\lwip/def.h
 ..\obj\sockets.o: ..\LWIP\lwip-1.4.1\src\include\ipv4\lwip/inet.h

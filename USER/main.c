@@ -138,7 +138,6 @@ float gravity_torch(void)
 	t1 = angle[0]+79; t2 = -angle[1]+126; t3 = -angle[5]+20;
 	alpha[0] = t1;alpha[1] = t1 - t2;alpha[2] = t1 - t2 - t3;
 	
-	printf("alpha[0] : %.4f, alpha[1]: %.4f, alpha[2] : %.4f\n", alpha[0], alpha[1], alpha[2]);
 	g_torch = l1 * m3 * 9.8 * cosf(alpha[0]) + l2 * m3 * 9.8 * cosf(alpha[1]) + 1/2 * l3 * m3 * 9.8 * cosf(alpha[2]) + 1/2 * l2 * m2 * 9.8 * cosf(alpha[1]) + l1 * m2 * 9.8 * cosf(alpha[0]) + 1/2 * l1 * m1 * 9.8 * cosf(alpha[0]) ;
 
 	return g_torch*1e-3;
@@ -328,7 +327,7 @@ void motor_task(void *pdata)
 	PID pid;
 	
 	float torch_des, OutPut;
-	float allegro_torch = 8;
+	float allegro_torch = 16;
 	
 	float R0 = 10,R_R;
 	float force_sen; 
@@ -336,9 +335,9 @@ void motor_task(void *pdata)
 	Jacobe J1;
 	FT oriFt, TransFt;
 	
-	float 	kp = 1400,
-			kd = 0,
-			ki = 0.1;
+	float 	kp = 290,
+			kd = 8,
+			ki = 22;
 	pid_InitWithMax(&pid, kp, kd, ki, 9999, maxOutput-1);         // set the kp as 1, set the kd as 1, set the ki as 0, set the max Interval and the max Output
 
 	oriFt.fx = 0;
@@ -359,7 +358,7 @@ void motor_task(void *pdata)
 		if (force_sen < 0) {force_sen=0;}
 		///////////////////////////////////
 
-		printf("%.4f,%.4f,%.4f,%.4f,%.4f,%.4f\n\n",angle[0],angle[1],angle[2],angle[3],angle[4],angle[5]);
+		printf(" angle[0]:%.4f, angle[1]:%.4f, angle[2]:%.4f\n angle[3]:%.4f, angle[4]:%.4f, angle[5]:%.4f\n\n",angle[0],angle[1],angle[2],angle[3],angle[4],angle[5]);
 		LCD_ShowxNum(110,390,R_R,3,16,0);
 		printf("R_R: %.4f\n\n", R_R);
 		printf("*************division line *************\n\n");
@@ -378,20 +377,20 @@ void motor_task(void *pdata)
 		printf("Jacobe matrix: %.4f, %.4f, %.4f, %.4f, %.4f, %.4f\n", J1.d1, J1.d2, J1.d3, J1.r1, J1.r2, J1.r3);
 		printf("torch_des: %.4f @Nmm\n", torch_des);
 		printf("torch_ref: %.4f @Nmm\n", allegro_torch);
-		
+		printf("Error: %.4f @Nmm\n", allegro_torch-torch_des);
 		printf("****************************************\n\n");
 		
 		pid_calc(&pid, allegro_torch, torch_des);
 		OutPut = pid_getPIDOutput(&pid);
 		//OutPut = OutPut + gravity_torch();
-		OutPut = OutPut / maxOutput * 500;
-		
-		printf("gravity_torch: %.4f\n", gravity_torch());
+		OutPut = OutPut>0?OutPut:200;
+		OutPut = OutPut<350?350:OutPut;
+//		printf("gravity_torch: %.4f\n", gravity_torch());
 		printf("output: %.4f\n\n", OutPut);
 		
 
 		TIM_SetCompare1(TIM14, (int)OutPut);
-		OSTimeDlyHMSM(0,0,0,100);
+		OSTimeDlyHMSM(0,0,0,5);
 	}
 }
 

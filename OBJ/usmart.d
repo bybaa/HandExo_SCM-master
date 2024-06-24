@@ -3,7 +3,7 @@
 ..\obj\usmart.o: ..\USMART\usmart_str.h
 ..\obj\usmart.o: ..\USER\stm32f4xx.h
 ..\obj\usmart.o: ..\CORE\core_cm4.h
-..\obj\usmart.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\usmart.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\usmart.o: ..\CORE\core_cmInstr.h
 ..\obj\usmart.o: ..\CORE\core_cmFunc.h
 ..\obj\usmart.o: ..\CORE\core_cm4_simd.h
@@ -37,5 +37,5 @@
 ..\obj\usmart.o: ..\FWLIB\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
 ..\obj\usmart.o: ..\FWLIB\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
 ..\obj\usmart.o: ..\SYSTEM\usart\usart.h
-..\obj\usmart.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\usmart.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\usmart.o: ..\SYSTEM\sys\sys.h

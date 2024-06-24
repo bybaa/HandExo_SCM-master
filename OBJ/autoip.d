@@ -5,12 +5,12 @@
 ..\obj\autoip.o: ..\LWIP\lwip-1.4.1\src\include\lwip/arch.h
 ..\obj\autoip.o: ..\LWIP\arch/cc.h
 ..\obj\autoip.o: ..\LWIP\arch/cpu.h
-..\obj\autoip.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\autoip.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\autoip.o: ..\UCOSII\CONFIG\includes.h
-..\obj\autoip.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-..\obj\autoip.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
-..\obj\autoip.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-..\obj\autoip.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\autoip.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\obj\autoip.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\obj\autoip.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\autoip.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdarg.h
 ..\obj\autoip.o: ..\UCOSII\CORE\ucos_ii.h
 ..\obj\autoip.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\autoip.o: ..\UCOSII\CONFIG\os_cfg.h
@@ -18,7 +18,7 @@
 ..\obj\autoip.o: ..\SYSTEM\sys\sys.h
 ..\obj\autoip.o: ..\USER\stm32f4xx.h
 ..\obj\autoip.o: ..\CORE\core_cm4.h
-..\obj\autoip.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\autoip.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\autoip.o: ..\CORE\core_cmInstr.h
 ..\obj\autoip.o: ..\CORE\core_cmFunc.h
 ..\obj\autoip.o: ..\CORE\core_cm4_simd.h

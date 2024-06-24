@@ -3,7 +3,7 @@
 ..\obj\sensor.o: ..\SYSTEM\sys\sys.h
 ..\obj\sensor.o: ..\USER\stm32f4xx.h
 ..\obj\sensor.o: ..\CORE\core_cm4.h
-..\obj\sensor.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\sensor.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\sensor.o: ..\CORE\core_cmInstr.h
 ..\obj\sensor.o: ..\CORE\core_cmFunc.h
 ..\obj\sensor.o: ..\CORE\core_cm4_simd.h
@@ -36,7 +36,7 @@
 ..\obj\sensor.o: ..\FWLIB\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h
 ..\obj\sensor.o: ..\FWLIB\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
 ..\obj\sensor.o: ..\FWLIB\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
-..\obj\sensor.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-..\obj\sensor.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+..\obj\sensor.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\sensor.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\math.h
 ..\obj\sensor.o: ..\SYSTEM\delay\delay.h
 ..\obj\sensor.o: ..\SYSTEM\usart\usart.h

@@ -5,12 +5,12 @@
 ..\obj\ip_frag.o: ..\LWIP\lwip-1.4.1\src\include\lwip/arch.h
 ..\obj\ip_frag.o: ..\LWIP\arch/cc.h
 ..\obj\ip_frag.o: ..\LWIP\arch/cpu.h
-..\obj\ip_frag.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\ip_frag.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\ip_frag.o: ..\UCOSII\CONFIG\includes.h
-..\obj\ip_frag.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-..\obj\ip_frag.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
-..\obj\ip_frag.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-..\obj\ip_frag.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\ip_frag.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\obj\ip_frag.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\obj\ip_frag.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\ip_frag.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdarg.h
 ..\obj\ip_frag.o: ..\UCOSII\CORE\ucos_ii.h
 ..\obj\ip_frag.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\ip_frag.o: ..\UCOSII\CONFIG\os_cfg.h
@@ -18,7 +18,7 @@
 ..\obj\ip_frag.o: ..\SYSTEM\sys\sys.h
 ..\obj\ip_frag.o: ..\USER\stm32f4xx.h
 ..\obj\ip_frag.o: ..\CORE\core_cm4.h
-..\obj\ip_frag.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\ip_frag.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\ip_frag.o: ..\CORE\core_cmInstr.h
 ..\obj\ip_frag.o: ..\CORE\core_cmFunc.h
 ..\obj\ip_frag.o: ..\CORE\core_cm4_simd.h

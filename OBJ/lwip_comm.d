@@ -4,7 +4,7 @@
 ..\obj\lwip_comm.o: ..\SYSTEM\sys\sys.h
 ..\obj\lwip_comm.o: ..\USER\stm32f4xx.h
 ..\obj\lwip_comm.o: ..\CORE\core_cm4.h
-..\obj\lwip_comm.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\lwip_comm.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\lwip_comm.o: ..\CORE\core_cmInstr.h
 ..\obj\lwip_comm.o: ..\CORE\core_cmFunc.h
 ..\obj\lwip_comm.o: ..\CORE\core_cm4_simd.h
@@ -46,12 +46,12 @@
 ..\obj\lwip_comm.o: ..\LWIP\lwip-1.4.1\src\include\lwip/arch.h
 ..\obj\lwip_comm.o: ..\LWIP\arch/cc.h
 ..\obj\lwip_comm.o: ..\LWIP\arch/cpu.h
-..\obj\lwip_comm.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\lwip_comm.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\lwip_comm.o: ..\UCOSII\CONFIG\includes.h
-..\obj\lwip_comm.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-..\obj\lwip_comm.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
-..\obj\lwip_comm.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-..\obj\lwip_comm.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\lwip_comm.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\obj\lwip_comm.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\obj\lwip_comm.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\lwip_comm.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdarg.h
 ..\obj\lwip_comm.o: ..\UCOSII\CORE\ucos_ii.h
 ..\obj\lwip_comm.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\lwip_comm.o: ..\UCOSII\CONFIG\os_cfg.h
@@ -76,7 +76,7 @@
 ..\obj\lwip_comm.o: ..\LWIP\lwip-1.4.1\src\include\ipv4\lwip/ip_frag.h
 ..\obj\lwip_comm.o: ..\LWIP\lwip-1.4.1\src\include\lwip/tcpip.h
 ..\obj\lwip_comm.o: ..\LWIP\lwip-1.4.1\src\include\lwip/api_msg.h
-..\obj\lwip_comm.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+..\obj\lwip_comm.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stddef.h
 ..\obj\lwip_comm.o: ..\LWIP\lwip-1.4.1\src\include\ipv4\lwip/igmp.h
 ..\obj\lwip_comm.o: ..\LWIP\lwip-1.4.1\src\include\lwip/api.h
 ..\obj\lwip_comm.o: ..\LWIP\lwip-1.4.1\src\include\lwip/netbuf.h

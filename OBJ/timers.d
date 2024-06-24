@@ -5,12 +5,12 @@
 ..\obj\timers.o: ..\LWIP\lwip-1.4.1\src\include\lwip/arch.h
 ..\obj\timers.o: ..\LWIP\arch/cc.h
 ..\obj\timers.o: ..\LWIP\arch/cpu.h
-..\obj\timers.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\timers.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\timers.o: ..\UCOSII\CONFIG\includes.h
-..\obj\timers.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-..\obj\timers.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
-..\obj\timers.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-..\obj\timers.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\timers.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\obj\timers.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\obj\timers.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\timers.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdarg.h
 ..\obj\timers.o: ..\UCOSII\CORE\ucos_ii.h
 ..\obj\timers.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\timers.o: ..\UCOSII\CONFIG\os_cfg.h
@@ -18,7 +18,7 @@
 ..\obj\timers.o: ..\SYSTEM\sys\sys.h
 ..\obj\timers.o: ..\USER\stm32f4xx.h
 ..\obj\timers.o: ..\CORE\core_cm4.h
-..\obj\timers.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\timers.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\timers.o: ..\CORE\core_cmInstr.h
 ..\obj\timers.o: ..\CORE\core_cmFunc.h
 ..\obj\timers.o: ..\CORE\core_cm4_simd.h
@@ -69,7 +69,7 @@
 ..\obj\timers.o: ..\LWIP\lwip-1.4.1\src\include\lwip/memp_std.h
 ..\obj\timers.o: ..\LWIP\lwip-1.4.1\src\include\lwip/tcpip.h
 ..\obj\timers.o: ..\LWIP\lwip-1.4.1\src\include\lwip/api_msg.h
-..\obj\timers.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+..\obj\timers.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stddef.h
 ..\obj\timers.o: ..\LWIP\lwip-1.4.1\src\include\ipv4\lwip/igmp.h
 ..\obj\timers.o: ..\LWIP\lwip-1.4.1\src\include\lwip/api.h
 ..\obj\timers.o: ..\LWIP\lwip-1.4.1\src\include\lwip/netbuf.h

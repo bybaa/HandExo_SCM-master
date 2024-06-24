@@ -6,12 +6,12 @@
 ..\obj\err.o: ..\LWIP\lwip-1.4.1\src\include\lwip/arch.h
 ..\obj\err.o: ..\LWIP\arch/cc.h
 ..\obj\err.o: ..\LWIP\arch/cpu.h
-..\obj\err.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\err.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\err.o: ..\UCOSII\CONFIG\includes.h
-..\obj\err.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-..\obj\err.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
-..\obj\err.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-..\obj\err.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\err.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\obj\err.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\obj\err.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\err.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdarg.h
 ..\obj\err.o: ..\UCOSII\CORE\ucos_ii.h
 ..\obj\err.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\err.o: ..\UCOSII\CONFIG\os_cfg.h
@@ -19,7 +19,7 @@
 ..\obj\err.o: ..\SYSTEM\sys\sys.h
 ..\obj\err.o: ..\USER\stm32f4xx.h
 ..\obj\err.o: ..\CORE\core_cm4.h
-..\obj\err.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\err.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\err.o: ..\CORE\core_cmInstr.h
 ..\obj\err.o: ..\CORE\core_cmFunc.h
 ..\obj\err.o: ..\CORE\core_cm4_simd.h

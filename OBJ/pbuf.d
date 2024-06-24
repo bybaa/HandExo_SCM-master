@@ -5,12 +5,12 @@
 ..\obj\pbuf.o: ..\LWIP\lwip-1.4.1\src\include\lwip/arch.h
 ..\obj\pbuf.o: ..\LWIP\arch/cc.h
 ..\obj\pbuf.o: ..\LWIP\arch/cpu.h
-..\obj\pbuf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\pbuf.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\pbuf.o: ..\UCOSII\CONFIG\includes.h
-..\obj\pbuf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-..\obj\pbuf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
-..\obj\pbuf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-..\obj\pbuf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\pbuf.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\obj\pbuf.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\obj\pbuf.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\pbuf.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdarg.h
 ..\obj\pbuf.o: ..\UCOSII\CORE\ucos_ii.h
 ..\obj\pbuf.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\pbuf.o: ..\UCOSII\CONFIG\os_cfg.h
@@ -18,7 +18,7 @@
 ..\obj\pbuf.o: ..\SYSTEM\sys\sys.h
 ..\obj\pbuf.o: ..\USER\stm32f4xx.h
 ..\obj\pbuf.o: ..\CORE\core_cm4.h
-..\obj\pbuf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\pbuf.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\pbuf.o: ..\CORE\core_cmInstr.h
 ..\obj\pbuf.o: ..\CORE\core_cmFunc.h
 ..\obj\pbuf.o: ..\CORE\core_cm4_simd.h

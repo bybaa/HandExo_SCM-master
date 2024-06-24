@@ -5,12 +5,12 @@
 ..\obj\tcp.o: ..\LWIP\lwip-1.4.1\src\include\lwip/arch.h
 ..\obj\tcp.o: ..\LWIP\arch/cc.h
 ..\obj\tcp.o: ..\LWIP\arch/cpu.h
-..\obj\tcp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\tcp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\tcp.o: ..\UCOSII\CONFIG\includes.h
-..\obj\tcp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-..\obj\tcp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
-..\obj\tcp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-..\obj\tcp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\tcp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\obj\tcp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\obj\tcp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\tcp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdarg.h
 ..\obj\tcp.o: ..\UCOSII\CORE\ucos_ii.h
 ..\obj\tcp.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\tcp.o: ..\UCOSII\CONFIG\os_cfg.h
@@ -18,7 +18,7 @@
 ..\obj\tcp.o: ..\SYSTEM\sys\sys.h
 ..\obj\tcp.o: ..\USER\stm32f4xx.h
 ..\obj\tcp.o: ..\CORE\core_cm4.h
-..\obj\tcp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\tcp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\tcp.o: ..\CORE\core_cmInstr.h
 ..\obj\tcp.o: ..\CORE\core_cmFunc.h
 ..\obj\tcp.o: ..\CORE\core_cm4_simd.h

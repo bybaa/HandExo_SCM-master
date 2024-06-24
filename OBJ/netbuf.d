@@ -5,12 +5,12 @@
 ..\obj\netbuf.o: ..\LWIP\lwip-1.4.1\src\include\lwip/arch.h
 ..\obj\netbuf.o: ..\LWIP\arch/cc.h
 ..\obj\netbuf.o: ..\LWIP\arch/cpu.h
-..\obj\netbuf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\netbuf.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\netbuf.o: ..\UCOSII\CONFIG\includes.h
-..\obj\netbuf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-..\obj\netbuf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
-..\obj\netbuf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-..\obj\netbuf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\netbuf.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\obj\netbuf.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\obj\netbuf.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\netbuf.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdarg.h
 ..\obj\netbuf.o: ..\UCOSII\CORE\ucos_ii.h
 ..\obj\netbuf.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\netbuf.o: ..\UCOSII\CONFIG\os_cfg.h
@@ -18,7 +18,7 @@
 ..\obj\netbuf.o: ..\SYSTEM\sys\sys.h
 ..\obj\netbuf.o: ..\USER\stm32f4xx.h
 ..\obj\netbuf.o: ..\CORE\core_cm4.h
-..\obj\netbuf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\netbuf.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\netbuf.o: ..\CORE\core_cmInstr.h
 ..\obj\netbuf.o: ..\CORE\core_cmFunc.h
 ..\obj\netbuf.o: ..\CORE\core_cm4_simd.h

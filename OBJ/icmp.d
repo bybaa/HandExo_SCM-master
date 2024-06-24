@@ -5,12 +5,12 @@
 ..\obj\icmp.o: ..\LWIP\lwip-1.4.1\src\include\lwip/arch.h
 ..\obj\icmp.o: ..\LWIP\arch/cc.h
 ..\obj\icmp.o: ..\LWIP\arch/cpu.h
-..\obj\icmp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\icmp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\icmp.o: ..\UCOSII\CONFIG\includes.h
-..\obj\icmp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-..\obj\icmp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
-..\obj\icmp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-..\obj\icmp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\icmp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\obj\icmp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\obj\icmp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\icmp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdarg.h
 ..\obj\icmp.o: ..\UCOSII\CORE\ucos_ii.h
 ..\obj\icmp.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\icmp.o: ..\UCOSII\CONFIG\os_cfg.h
@@ -18,7 +18,7 @@
 ..\obj\icmp.o: ..\SYSTEM\sys\sys.h
 ..\obj\icmp.o: ..\USER\stm32f4xx.h
 ..\obj\icmp.o: ..\CORE\core_cm4.h
-..\obj\icmp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\icmp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\icmp.o: ..\CORE\core_cmInstr.h
 ..\obj\icmp.o: ..\CORE\core_cmFunc.h
 ..\obj\icmp.o: ..\CORE\core_cm4_simd.h

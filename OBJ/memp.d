@@ -5,12 +5,12 @@
 ..\obj\memp.o: ..\LWIP\lwip-1.4.1\src\include\lwip/arch.h
 ..\obj\memp.o: ..\LWIP\arch/cc.h
 ..\obj\memp.o: ..\LWIP\arch/cpu.h
-..\obj\memp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\memp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\memp.o: ..\UCOSII\CONFIG\includes.h
-..\obj\memp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-..\obj\memp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
-..\obj\memp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-..\obj\memp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\memp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\obj\memp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\obj\memp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\memp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdarg.h
 ..\obj\memp.o: ..\UCOSII\CORE\ucos_ii.h
 ..\obj\memp.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\memp.o: ..\UCOSII\CONFIG\os_cfg.h
@@ -18,7 +18,7 @@
 ..\obj\memp.o: ..\SYSTEM\sys\sys.h
 ..\obj\memp.o: ..\USER\stm32f4xx.h
 ..\obj\memp.o: ..\CORE\core_cm4.h
-..\obj\memp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\memp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\memp.o: ..\CORE\core_cmInstr.h
 ..\obj\memp.o: ..\CORE\core_cmFunc.h
 ..\obj\memp.o: ..\CORE\core_cm4_simd.h
@@ -68,7 +68,7 @@
 ..\obj\memp.o: ..\LWIP\lwip-1.4.1\src\include\ipv4\lwip/icmp.h
 ..\obj\memp.o: ..\LWIP\lwip-1.4.1\src\include\ipv4\lwip/igmp.h
 ..\obj\memp.o: ..\LWIP\lwip-1.4.1\src\include\lwip/api.h
-..\obj\memp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+..\obj\memp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stddef.h
 ..\obj\memp.o: ..\LWIP\lwip-1.4.1\src\include\lwip/netbuf.h
 ..\obj\memp.o: ..\LWIP\lwip-1.4.1\src\include\lwip/lwip_sys.h
 ..\obj\memp.o: ..\LWIP\arch/sys_arch.h

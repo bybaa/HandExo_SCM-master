@@ -5,12 +5,12 @@
 ..\obj\inet.o: ..\LWIP\lwip-1.4.1\src\include\lwip/arch.h
 ..\obj\inet.o: ..\LWIP\arch/cc.h
 ..\obj\inet.o: ..\LWIP\arch/cpu.h
-..\obj\inet.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\inet.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\inet.o: ..\UCOSII\CONFIG\includes.h
-..\obj\inet.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-..\obj\inet.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
-..\obj\inet.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-..\obj\inet.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\inet.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\obj\inet.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\obj\inet.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\inet.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdarg.h
 ..\obj\inet.o: ..\UCOSII\CORE\ucos_ii.h
 ..\obj\inet.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\inet.o: ..\UCOSII\CONFIG\os_cfg.h
@@ -18,7 +18,7 @@
 ..\obj\inet.o: ..\SYSTEM\sys\sys.h
 ..\obj\inet.o: ..\USER\stm32f4xx.h
 ..\obj\inet.o: ..\CORE\core_cm4.h
-..\obj\inet.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\inet.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\inet.o: ..\CORE\core_cmInstr.h
 ..\obj\inet.o: ..\CORE\core_cmFunc.h
 ..\obj\inet.o: ..\CORE\core_cm4_simd.h

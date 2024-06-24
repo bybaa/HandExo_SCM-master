@@ -2,7 +2,7 @@
 ..\obj\main.o: ..\SYSTEM\sys\sys.h
 ..\obj\main.o: ..\USER\stm32f4xx.h
 ..\obj\main.o: ..\CORE\core_cm4.h
-..\obj\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\main.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\main.o: ..\CORE\core_cmInstr.h
 ..\obj\main.o: ..\CORE\core_cmFunc.h
 ..\obj\main.o: ..\CORE\core_cm4_simd.h
@@ -37,7 +37,7 @@
 ..\obj\main.o: ..\FWLIB\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
 ..\obj\main.o: ..\SYSTEM\delay\delay.h
 ..\obj\main.o: ..\SYSTEM\usart\usart.h
-..\obj\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\main.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\main.o: ..\HARDWARE\LED\led.h
 ..\obj\main.o: ..\HARDWARE\KEY\key.h
 ..\obj\main.o: ..\LWIP\lwip_app\lwip_comm\lwip_comm.h
@@ -48,13 +48,13 @@
 ..\obj\main.o: ..\USMART\usmart_str.h
 ..\obj\main.o: ..\HARDWARE\TIMER\timer.h
 ..\obj\main.o: ..\HARDWARE\LCD\lcd.h
-..\obj\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\main.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\obj\main.o: ..\HARDWARE\SRAM\sram.h
 ..\obj\main.o: ..\MALLOC\malloc.h
 ..\obj\main.o: ..\UCOSII\CONFIG\includes.h
-..\obj\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-..\obj\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
-..\obj\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\main.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\obj\main.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\obj\main.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdarg.h
 ..\obj\main.o: ..\UCOSII\CORE\ucos_ii.h
 ..\obj\main.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\main.o: ..\UCOSII\CONFIG\os_cfg.h
@@ -62,7 +62,7 @@
 ..\obj\main.o: ..\LWIP\lwip_app\lwip_comm\lwipopts.h
 ..\obj\main.o: ..\LWIP\lwip_app\udp_demo\udp_demo.h
 ..\obj\main.o: ..\HARDWARE\SENSOR\sensor.h
-..\obj\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+..\obj\main.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\math.h
 ..\obj\main.o: ..\HARDWARE\PWM\pwm.h
 ..\obj\main.o: ..\HARDWARE\PID\pid.h
 ..\obj\main.o: ..\HARDWARE\ODistance\ODcalc.h

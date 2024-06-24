@@ -5,12 +5,12 @@
 ..\obj\etharp.o: ..\LWIP\lwip-1.4.1\src\include\lwip/arch.h
 ..\obj\etharp.o: ..\LWIP\arch/cc.h
 ..\obj\etharp.o: ..\LWIP\arch/cpu.h
-..\obj\etharp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\etharp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\etharp.o: ..\UCOSII\CONFIG\includes.h
-..\obj\etharp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-..\obj\etharp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
-..\obj\etharp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-..\obj\etharp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\etharp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\obj\etharp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\obj\etharp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\etharp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdarg.h
 ..\obj\etharp.o: ..\UCOSII\CORE\ucos_ii.h
 ..\obj\etharp.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\etharp.o: ..\UCOSII\CONFIG\os_cfg.h
@@ -18,7 +18,7 @@
 ..\obj\etharp.o: ..\SYSTEM\sys\sys.h
 ..\obj\etharp.o: ..\USER\stm32f4xx.h
 ..\obj\etharp.o: ..\CORE\core_cm4.h
-..\obj\etharp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\etharp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\etharp.o: ..\CORE\core_cmInstr.h
 ..\obj\etharp.o: ..\CORE\core_cmFunc.h
 ..\obj\etharp.o: ..\CORE\core_cm4_simd.h

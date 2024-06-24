@@ -5,12 +5,12 @@
 ..\obj\stats.o: ..\LWIP\lwip-1.4.1\src\include\lwip/arch.h
 ..\obj\stats.o: ..\LWIP\arch/cc.h
 ..\obj\stats.o: ..\LWIP\arch/cpu.h
-..\obj\stats.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\stats.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\stats.o: ..\UCOSII\CONFIG\includes.h
-..\obj\stats.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-..\obj\stats.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
-..\obj\stats.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-..\obj\stats.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\stats.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\obj\stats.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\obj\stats.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\stats.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdarg.h
 ..\obj\stats.o: ..\UCOSII\CORE\ucos_ii.h
 ..\obj\stats.o: ..\UCOSII\CONFIG\includes.h
 ..\obj\stats.o: ..\UCOSII\CONFIG\os_cfg.h
@@ -18,7 +18,7 @@
 ..\obj\stats.o: ..\SYSTEM\sys\sys.h
 ..\obj\stats.o: ..\USER\stm32f4xx.h
 ..\obj\stats.o: ..\CORE\core_cm4.h
-..\obj\stats.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\stats.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\stats.o: ..\CORE\core_cmInstr.h
 ..\obj\stats.o: ..\CORE\core_cmFunc.h
 ..\obj\stats.o: ..\CORE\core_cm4_simd.h
