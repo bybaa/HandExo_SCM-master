@@ -9,6 +9,10 @@ void motor_v(int v);
 
 void TIM14_PWM_Init(uint32_t arr, uint32_t psc);
 
+void DirectionCtl_Init(void);
+	
+void DirectionCtl(u8 dir);
+	
 void PWM_SetCompareLow(void);
 
 void PWM_SetCompareMid(void); 

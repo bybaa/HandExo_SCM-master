@@ -45,3 +45,4 @@
 ..\obj\usmart_config.o: ..\HARDWARE\SENSOR\sensor.h
 ..\obj\usmart_config.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\math.h
 ..\obj\usmart_config.o: ..\HARDWARE\PWM\pwm.h
+..\obj\usmart_config.o: ..\HARDWARE\PID\pid.h

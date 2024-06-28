@@ -178,7 +178,7 @@ int main(void)
 	LCD_Init();  																							//LCD初始化
 	
 	Sensor_GPIO();																		  			//传感器GPIO_INTT
-
+	DirectionCtl_Init(); 							// PF7|PF110初始化
 	TIM14_PWM_Init(499,83);
 	PWM_Init(499,83);
 	TIM_SetCompare1(TIM3, 100);
@@ -321,13 +321,16 @@ void led_task(void *pdata)
 void motor_task(void *pdata)
 {
 	extern float angle[6];
+	
+	float deg[6];
+	
 	u16 adcx;
 	TransMatrix TM;
 	
 	PID pid;
 	
 	float torch_des, OutPut;
-	float allegro_torch = 16;
+	float allegro_torch = 140;
 	
 	float R0 = 10,R_R;
 	float force_sen; 
@@ -335,9 +338,10 @@ void motor_task(void *pdata)
 	Jacobe J1;
 	FT oriFt, TransFt;
 	
-	float 	kp = 290,
-			kd = 8,
-			ki = 22;
+	float 	kp = 800,
+			kd = 0,
+			ki = 50;
+	
 	pid_InitWithMax(&pid, kp, kd, ki, 9999, maxOutput-1);         // set the kp as 1, set the kd as 1, set the ki as 0, set the max Interval and the max Output
 
 	oriFt.fx = 0;
@@ -347,18 +351,29 @@ void motor_task(void *pdata)
 	oriFt.ty = 0;
 	oriFt.tz = 0;
 	
+	deg[0] = -20;
+	deg[1] = 20.3;
+	deg[2] = 2.7;
+	deg[3] = 0;
+	deg[4] = 0;
+	deg[5] = 0;
+	
 	while(1)
 	{	
-		TM_calc(&TM, angle);
+		TM_calc(&TM, deg);
 		
 		///////////////////////////////////
 		adcx=Get_Adc_Average(ADC_Channel_5,20);
 		R_R = 1/R0 * (4096-adcx) / adcx;
 		force_sen = R_R2force(R_R) * 1e-2;
 		if (force_sen < 0) {force_sen=0;}
+		
+		force_sen = force_sen ;
 		///////////////////////////////////
-
-		printf(" angle[0]:%.4f, angle[1]:%.4f, angle[2]:%.4f\n angle[3]:%.4f, angle[4]:%.4f, angle[5]:%.4f\n\n",angle[0],angle[1],angle[2],angle[3],angle[4],angle[5]);
+		
+		printf("kp:%.4f, kd:%.4f, ki:%.4f\n", kp, kd, ki);
+		printf("*************division line *************\n\n");
+		printf("angle[0]:%.4f, angle[1]:%.4f, angle[2]:%.4f\n angle[3]:%.4f, angle[4]:%.4f, angle[5]:%.4f\n\n",angle[0],angle[1],angle[2],angle[3],angle[4],angle[5]);
 		LCD_ShowxNum(110,390,R_R,3,16,0);
 		printf("R_R: %.4f\n\n", R_R);
 		printf("*************division line *************\n\n");
@@ -369,8 +384,8 @@ void motor_task(void *pdata)
 		oriFt.fz = -force_sen;                        
 		TransFt = TransFT(TM, oriFt);                 // get the transfered force
 		J1 = GetJacobe(&TM);
-		torch_des = GetTorch(J1, TransFt);
-		torch_des = fabs(torch_des);
+		torch_des = -GetTorch(J1, TransFt);
+		// torch_des = fabs(torch_des);
 		/////////////////////////////////
 
 		printf("Generallized force: %.4f N,%.4f N, %.4f N \n", TransFt.fx, TransFt.fy, TransFt.fz);
@@ -383,13 +398,22 @@ void motor_task(void *pdata)
 		pid_calc(&pid, allegro_torch, torch_des);
 		OutPut = pid_getPIDOutput(&pid);
 		//OutPut = OutPut + gravity_torch();
-		OutPut = OutPut>0?OutPut:200;
-		OutPut = OutPut<350?350:OutPut;
+//		OutPut = OutPut>0?OutPut:200;
+//		OutPut = OutPut<300?300:OutPut;
 //		printf("gravity_torch: %.4f\n", gravity_torch());
+		
+		OutPut = OutPut * 500 / (maxOutput);
+		
+		if (OutPut > 0) {
+			DirectionCtl(1);                   // 逆时针正转
+			
+		} else {
+			DirectionCtl(0);                   // 顺时针反转
+		}
 		printf("output: %.4f\n\n", OutPut);
 		
 
-		TIM_SetCompare1(TIM14, (int)OutPut);
+		TIM_SetCompare1(TIM14, abs((int)OutPut));
 		OSTimeDlyHMSM(0,0,0,5);
 	}
 }

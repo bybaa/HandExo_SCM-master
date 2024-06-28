@@ -94,6 +94,31 @@ void TIM14_PWM_Init(uint32_t arr, uint32_t psc)
     TIM_Cmd(TIM14, ENABLE); //使能TIM14
 }
 
+void DirectionCtl_Init(void)
+{
+	GPIO_InitTypeDef GPIO_InitStructure;
+	
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOF, ENABLE); // 开时钟
+	
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7|GPIO_Pin_10;
+	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	
+	GPIO_Init(GPIOF, &GPIO_InitStructure);
+	
+}
+void DirectionCtl(u8 dir)
+{
+	if (dir == 1) {
+		GPIO_SetBits(GPIOF, GPIO_Pin_7);
+		GPIO_ResetBits(GPIOF, GPIO_Pin_10);
+	} else if (dir == 0){
+		GPIO_SetBits(GPIOF, GPIO_Pin_10);
+		GPIO_ResetBits(GPIOF, GPIO_Pin_7);
+	}
+}
 
 void PWM_SetCompareLow(void) 
 {

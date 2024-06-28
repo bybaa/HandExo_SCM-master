@@ -1,5 +1,10 @@
 #include "pid.h"
 
+float _kp,
+	  _kd,
+	  _ki,
+	  _ref;
+
 void pid_Init(PID* pid, float kp, float kd, float ki) {
     pid->kp = kp;
     pid->kd = kd;
@@ -50,3 +55,4 @@ void pid_calc(PID* pid, float reference, float feedback) {
 float pid_getPIDOutput(PID* pid) {
     return pid->output;
 }
+
