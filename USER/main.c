@@ -330,7 +330,8 @@ void motor_task(void *pdata)
 	PID pid;
 	
 	float torch_des, OutPut;
-	float allegro_torch = 140;
+	
+	float virtual_force = 140;
 	
 	float R0 = 10,R_R;
 	float force_sen; 
@@ -377,29 +378,29 @@ void motor_task(void *pdata)
 		LCD_ShowxNum(110,390,R_R,3,16,0);
 		printf("R_R: %.4f\n\n", R_R);
 		printf("*************division line *************\n\n");
+		
 		printf("force_sen: %.4f @N\n", force_sen);
+		printf("force_ref: %.4f @N\n", virtual_force);
+		printf("Error: %.4f @Nmm\n", virtual_force-force_sen);	
+		
 		printf("****************************************\n\n");
 
+		pid_calc(&pid, virtual_force, torch_des);
+		OutPut = pid_getPIDOutput(&pid);               // pid算完得出的结果具有力的属性
+		
 		/////////////////////////////////
-		oriFt.fz = -force_sen;                        
+		oriFt.fz = OutPut;                        
 		TransFt = TransFT(TM, oriFt);                 // get the transfered force
 		J1 = GetJacobe(&TM);
-		torch_des = -GetTorch(J1, TransFt);
-		// torch_des = fabs(torch_des);
+		torch_des = -GetTorch(J1, TransFt);           // 获取用于motor的torch
+
 		/////////////////////////////////
 
-		printf("Generallized force: %.4f N,%.4f N, %.4f N \n", TransFt.fx, TransFt.fy, TransFt.fz);
 		printf("Jacobe matrix: %.4f, %.4f, %.4f, %.4f, %.4f, %.4f\n", J1.d1, J1.d2, J1.d3, J1.r1, J1.r2, J1.r3);
 		printf("torch_des: %.4f @Nmm\n", torch_des);
-		printf("torch_ref: %.4f @Nmm\n", allegro_torch);
-		printf("Error: %.4f @Nmm\n", allegro_torch-torch_des);
+
 		printf("****************************************\n\n");
 		
-		pid_calc(&pid, allegro_torch, torch_des);
-		OutPut = pid_getPIDOutput(&pid);
-		//OutPut = OutPut + gravity_torch();
-//		OutPut = OutPut>0?OutPut:200;
-//		OutPut = OutPut<300?300:OutPut;
 //		printf("gravity_torch: %.4f\n", gravity_torch());
 		
 		OutPut = OutPut * 500 / (maxOutput);
