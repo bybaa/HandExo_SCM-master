@@ -329,9 +329,9 @@ void motor_task(void *pdata)
 	
 	PID pid;
 	
-	float torch_des, OutPut;
+	float motor_des, OutPut;
 	
-	float virtual_force = 140;
+	float virtual_force = 5;
 	
 	float R0 = 10,R_R;
 	float force_sen; 
@@ -339,9 +339,9 @@ void motor_task(void *pdata)
 	Jacobe J1;
 	FT oriFt, TransFt;
 	
-	float 	kp = 800,
+	float 	kp = 20,
 			kd = 0,
-			ki = 50;
+			ki = 0;
 	
 	pid_InitWithMax(&pid, kp, kd, ki, 9999, maxOutput-1);         // set the kp as 1, set the kd as 1, set the ki as 0, set the max Interval and the max Output
 
@@ -383,38 +383,39 @@ void motor_task(void *pdata)
 		printf("force_ref: %.4f @N\n", virtual_force);
 		printf("Error: %.4f @Nmm\n", virtual_force-force_sen);	
 		
+
 		printf("****************************************\n\n");
 
-		pid_calc(&pid, virtual_force, torch_des);
+		pid_calc(&pid, virtual_force, force_sen);
 		OutPut = pid_getPIDOutput(&pid);               // pid算完得出的结果具有力的属性
 		
+		printf("output: %.4f\n\n", OutPut);
+
 		/////////////////////////////////
 		oriFt.fz = OutPut;                        
 		TransFt = TransFT(TM, oriFt);                 // get the transfered force
 		J1 = GetJacobe(&TM);
-		torch_des = -GetTorch(J1, TransFt);           // 获取用于motor的torch
+		motor_des = GetTorch(J1, TransFt);           // 获取用于motor的torch
 
 		/////////////////////////////////
 
 		printf("Jacobe matrix: %.4f, %.4f, %.4f, %.4f, %.4f, %.4f\n", J1.d1, J1.d2, J1.d3, J1.r1, J1.r2, J1.r3);
-		printf("torch_des: %.4f @Nmm\n", torch_des);
+		printf("motor_des: %.4f @Nmm\n", motor_des);
 
 		printf("****************************************\n\n");
 		
 //		printf("gravity_torch: %.4f\n", gravity_torch());
 		
-		OutPut = OutPut * 500 / (maxOutput);
+
 		
-		if (OutPut > 0) {
+		if (motor_des > 0) {
 			DirectionCtl(1);                   // 逆时针正转
 			
 		} else {
 			DirectionCtl(0);                   // 顺时针反转
 		}
-		printf("output: %.4f\n\n", OutPut);
-		
 
-		TIM_SetCompare1(TIM14, abs((int)OutPut));
+		TIM_SetCompare1(TIM14, abs((int)motor_des));
 		OSTimeDlyHMSM(0,0,0,5);
 	}
 }
