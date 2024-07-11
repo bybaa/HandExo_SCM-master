@@ -1,11 +1,11 @@
 ..\..\output\if_api.o: ..\..\Middlewares\LWIP\src\api\if_api.c
 ..\..\output\if_api.o: ..\..\Middlewares\lwip\src\include\lwip/opt.h
 ..\..\output\if_api.o: ..\..\Middlewares\lwip\arch\lwipopts.h
-..\..\output\if_api.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\..\output\if_api.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\..\output\if_api.o: ..\..\Middlewares\lwip\src\include\lwip/debug.h
 ..\..\output\if_api.o: ..\..\Middlewares\lwip\src\include\lwip/arch.h
 ..\..\output\if_api.o: ..\..\Middlewares\lwip\arch/cc.h
-..\..\output\if_api.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
+..\..\output\if_api.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\..\output\if_api.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 ..\..\output\if_api.o: ..\..\User\stm32f4xx_hal_conf.h
 ..\..\output\if_api.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h
@@ -13,7 +13,7 @@
 ..\..\output\if_api.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
 ..\..\output\if_api.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h
 ..\..\output\if_api.o: ..\..\Drivers\CMSIS\Include\core_cm4.h
-..\..\output\if_api.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
+..\..\output\if_api.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\..\output\if_api.o: ..\..\Drivers\CMSIS\Include\cmsis_version.h
 ..\..\output\if_api.o: ..\..\Drivers\CMSIS\Include\cmsis_compiler.h
 ..\..\output\if_api.o: ..\..\Drivers\CMSIS\Include\cmsis_armcc.h
@@ -21,7 +21,7 @@
 ..\..\output\if_api.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
 ..\..\output\if_api.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 ..\..\output\if_api.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy/stm32_hal_legacy.h
-..\..\output\if_api.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stddef.h
+..\..\output\if_api.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 ..\..\output\if_api.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h
 ..\..\output\if_api.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h
 ..\..\output\if_api.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h
@@ -87,9 +87,9 @@
 ..\..\output\if_api.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dfsdm.h
 ..\..\output\if_api.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_lptim.h
 ..\..\output\if_api.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_mmc.h
-..\..\output\if_api.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\inttypes.h
-..\..\output\if_api.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\limits.h
-..\..\output\if_api.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\..\output\if_api.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
+..\..\output\if_api.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+..\..\output\if_api.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
 ..\..\output\if_api.o: ..\..\Middlewares\lwip\src\include\lwip/opt.h
 ..\..\output\if_api.o: ..\..\Middlewares\lwip\src\include\lwip/errno.h
 ..\..\output\if_api.o: ..\..\Middlewares\lwip\src\include\lwip/if_api.h
@@ -112,6 +112,6 @@
 ..\..\output\if_api.o: ..\..\Middlewares\lwip\src\include\lwip/priv/sockets_priv.h
 ..\..\output\if_api.o: ..\..\Middlewares\lwip\src\include\lwip/sockets.h
 ..\..\output\if_api.o: ..\..\Middlewares\lwip\src\include\lwip/inet.h
-..\..\output\if_api.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\..\output\if_api.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 ..\..\output\if_api.o: ..\..\Middlewares\lwip\src\include\lwip/sys.h
 ..\..\output\if_api.o: ..\..\Middlewares\lwip\arch/sys_arch.h

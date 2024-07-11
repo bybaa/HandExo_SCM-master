@@ -89,7 +89,8 @@ void lwip_demo(void)
             while (1)
             {
                 /* 第四步：如果指定的按键按下时，会发送信息 */
-                if ((g_lwip_send_flag & LWIP_SEND_DATA) == LWIP_SEND_DATA)
+//                if ((g_lwip_send_flag & LWIP_SEND_DATA) == LWIP_SEND_DATA)
+				if (1)
                 {
                     sentbuf = netbuf_new();
                     netbuf_alloc(sentbuf, sizeof(angle_udp));
@@ -139,7 +140,7 @@ void lwip_demo(void)
                 
                 else vTaskDelay(5);                                     /* 延时5ms */
 				
-                vTaskDelay(10);
+                vTaskDelay(1);
             }
         }
         else printf("UDP绑定失败\r\n");

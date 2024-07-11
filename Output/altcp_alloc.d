@@ -1,11 +1,11 @@
 ..\..\output\altcp_alloc.o: ..\..\Middlewares\LWIP\src\core\altcp_alloc.c
 ..\..\output\altcp_alloc.o: ..\..\Middlewares\lwip\src\include\lwip/opt.h
 ..\..\output\altcp_alloc.o: ..\..\Middlewares\lwip\arch\lwipopts.h
-..\..\output\altcp_alloc.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\..\output\altcp_alloc.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\..\output\altcp_alloc.o: ..\..\Middlewares\lwip\src\include\lwip/debug.h
 ..\..\output\altcp_alloc.o: ..\..\Middlewares\lwip\src\include\lwip/arch.h
 ..\..\output\altcp_alloc.o: ..\..\Middlewares\lwip\arch/cc.h
-..\..\output\altcp_alloc.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
+..\..\output\altcp_alloc.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\..\output\altcp_alloc.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 ..\..\output\altcp_alloc.o: ..\..\User\stm32f4xx_hal_conf.h
 ..\..\output\altcp_alloc.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h
@@ -13,7 +13,7 @@
 ..\..\output\altcp_alloc.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
 ..\..\output\altcp_alloc.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h
 ..\..\output\altcp_alloc.o: ..\..\Drivers\CMSIS\Include\core_cm4.h
-..\..\output\altcp_alloc.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
+..\..\output\altcp_alloc.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\..\output\altcp_alloc.o: ..\..\Drivers\CMSIS\Include\cmsis_version.h
 ..\..\output\altcp_alloc.o: ..\..\Drivers\CMSIS\Include\cmsis_compiler.h
 ..\..\output\altcp_alloc.o: ..\..\Drivers\CMSIS\Include\cmsis_armcc.h
@@ -21,7 +21,7 @@
 ..\..\output\altcp_alloc.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
 ..\..\output\altcp_alloc.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 ..\..\output\altcp_alloc.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy/stm32_hal_legacy.h
-..\..\output\altcp_alloc.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stddef.h
+..\..\output\altcp_alloc.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 ..\..\output\altcp_alloc.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h
 ..\..\output\altcp_alloc.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h
 ..\..\output\altcp_alloc.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h
@@ -87,7 +87,7 @@
 ..\..\output\altcp_alloc.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dfsdm.h
 ..\..\output\altcp_alloc.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_lptim.h
 ..\..\output\altcp_alloc.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_mmc.h
-..\..\output\altcp_alloc.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\inttypes.h
-..\..\output\altcp_alloc.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\limits.h
-..\..\output\altcp_alloc.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\..\output\altcp_alloc.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
+..\..\output\altcp_alloc.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+..\..\output\altcp_alloc.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
 ..\..\output\altcp_alloc.o: ..\..\Middlewares\lwip\src\include\lwip/opt.h

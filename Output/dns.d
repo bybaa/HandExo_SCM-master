@@ -1,11 +1,11 @@
 ..\..\output\dns.o: ..\..\Middlewares\LWIP\src\core\dns.c
 ..\..\output\dns.o: ..\..\Middlewares\lwip\src\include\lwip/opt.h
 ..\..\output\dns.o: ..\..\Middlewares\lwip\arch\lwipopts.h
-..\..\output\dns.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\..\output\dns.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\..\output\dns.o: ..\..\Middlewares\lwip\src\include\lwip/debug.h
 ..\..\output\dns.o: ..\..\Middlewares\lwip\src\include\lwip/arch.h
 ..\..\output\dns.o: ..\..\Middlewares\lwip\arch/cc.h
-..\..\output\dns.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
+..\..\output\dns.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\..\output\dns.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 ..\..\output\dns.o: ..\..\User\stm32f4xx_hal_conf.h
 ..\..\output\dns.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h
@@ -13,7 +13,7 @@
 ..\..\output\dns.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
 ..\..\output\dns.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h
 ..\..\output\dns.o: ..\..\Drivers\CMSIS\Include\core_cm4.h
-..\..\output\dns.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
+..\..\output\dns.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\..\output\dns.o: ..\..\Drivers\CMSIS\Include\cmsis_version.h
 ..\..\output\dns.o: ..\..\Drivers\CMSIS\Include\cmsis_compiler.h
 ..\..\output\dns.o: ..\..\Drivers\CMSIS\Include\cmsis_armcc.h
@@ -21,7 +21,7 @@
 ..\..\output\dns.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
 ..\..\output\dns.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 ..\..\output\dns.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy/stm32_hal_legacy.h
-..\..\output\dns.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stddef.h
+..\..\output\dns.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 ..\..\output\dns.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h
 ..\..\output\dns.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h
 ..\..\output\dns.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h
@@ -87,9 +87,9 @@
 ..\..\output\dns.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dfsdm.h
 ..\..\output\dns.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_lptim.h
 ..\..\output\dns.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_mmc.h
-..\..\output\dns.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\inttypes.h
-..\..\output\dns.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\limits.h
-..\..\output\dns.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\..\output\dns.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
+..\..\output\dns.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+..\..\output\dns.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
 ..\..\output\dns.o: ..\..\Middlewares\lwip\src\include\lwip/opt.h
 ..\..\output\dns.o: ..\..\Middlewares\lwip\src\include\lwip/def.h
 ..\..\output\dns.o: ..\..\Middlewares\lwip\src\include\lwip/udp.h
@@ -115,4 +115,4 @@
 ..\..\output\dns.o: ..\..\Middlewares\lwip\src\include\lwip/prot/udp.h
 ..\..\output\dns.o: ..\..\Middlewares\lwip\src\include\lwip/dns.h
 ..\..\output\dns.o: ..\..\Middlewares\lwip\src\include\lwip/prot/dns.h
-..\..\output\dns.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\..\output\dns.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

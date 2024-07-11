@@ -4,7 +4,7 @@
 ..\..\output\sram.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
 ..\..\output\sram.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h
 ..\..\output\sram.o: ..\..\Drivers\CMSIS\Include\core_cm4.h
-..\..\output\sram.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
+..\..\output\sram.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\..\output\sram.o: ..\..\Drivers\CMSIS\Include\cmsis_version.h
 ..\..\output\sram.o: ..\..\Drivers\CMSIS\Include\cmsis_compiler.h
 ..\..\output\sram.o: ..\..\Drivers\CMSIS\Include\cmsis_armcc.h
@@ -16,7 +16,7 @@
 ..\..\output\sram.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h
 ..\..\output\sram.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
 ..\..\output\sram.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy/stm32_hal_legacy.h
-..\..\output\sram.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stddef.h
+..\..\output\sram.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 ..\..\output\sram.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h
 ..\..\output\sram.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h
 ..\..\output\sram.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h
@@ -84,4 +84,4 @@
 ..\..\output\sram.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_mmc.h
 ..\..\output\sram.o: ..\..\Drivers\CMSIS\Include\core_cm4.h
 ..\..\output\sram.o: ..\..\Drivers\./SYSTEM/usart/usart.h
-..\..\output\sram.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
+..\..\output\sram.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

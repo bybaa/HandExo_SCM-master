@@ -1,11 +1,11 @@
 ..\..\output\ethernetif.o: ..\..\Middlewares\LWIP\arch\ethernetif.c
 ..\..\output\ethernetif.o: ..\..\Middlewares\lwip\src\include\lwip/opt.h
 ..\..\output\ethernetif.o: ..\..\Middlewares\lwip\arch\lwipopts.h
-..\..\output\ethernetif.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\..\output\ethernetif.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\..\output\ethernetif.o: ..\..\Middlewares\lwip\src\include\lwip/debug.h
 ..\..\output\ethernetif.o: ..\..\Middlewares\lwip\src\include\lwip/arch.h
 ..\..\output\ethernetif.o: ..\..\Middlewares\lwip\arch/cc.h
-..\..\output\ethernetif.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
+..\..\output\ethernetif.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\..\output\ethernetif.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 ..\..\output\ethernetif.o: ..\..\User\stm32f4xx_hal_conf.h
 ..\..\output\ethernetif.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h
@@ -13,7 +13,7 @@
 ..\..\output\ethernetif.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
 ..\..\output\ethernetif.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h
 ..\..\output\ethernetif.o: ..\..\Drivers\CMSIS\Include\core_cm4.h
-..\..\output\ethernetif.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
+..\..\output\ethernetif.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\..\output\ethernetif.o: ..\..\Drivers\CMSIS\Include\cmsis_version.h
 ..\..\output\ethernetif.o: ..\..\Drivers\CMSIS\Include\cmsis_compiler.h
 ..\..\output\ethernetif.o: ..\..\Drivers\CMSIS\Include\cmsis_armcc.h
@@ -21,7 +21,7 @@
 ..\..\output\ethernetif.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
 ..\..\output\ethernetif.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 ..\..\output\ethernetif.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy/stm32_hal_legacy.h
-..\..\output\ethernetif.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stddef.h
+..\..\output\ethernetif.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 ..\..\output\ethernetif.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h
 ..\..\output\ethernetif.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h
 ..\..\output\ethernetif.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h
@@ -87,9 +87,9 @@
 ..\..\output\ethernetif.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dfsdm.h
 ..\..\output\ethernetif.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_lptim.h
 ..\..\output\ethernetif.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_mmc.h
-..\..\output\ethernetif.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\inttypes.h
-..\..\output\ethernetif.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\limits.h
-..\..\output\ethernetif.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\..\output\ethernetif.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
+..\..\output\ethernetif.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+..\..\output\ethernetif.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
 ..\..\output\ethernetif.o: ..\..\Middlewares\lwip\src\include\lwip/opt.h
 ..\..\output\ethernetif.o: ..\..\Middlewares\lwip\src\include\netif/etharp.h
 ..\..\output\ethernetif.o: ..\..\Middlewares\lwip\src\include\lwip/etharp.h
@@ -137,4 +137,4 @@
 ..\..\output\ethernetif.o: ..\..\Middlewares\LWIP\arch\ethernetif.h
 ..\..\output\ethernetif.o: ..\..\Middlewares\LWIP\arch\lwip_comm.h
 ..\..\output\ethernetif.o: ..\..\Drivers\./BSP/ETHERNET/ethernet.h
-..\..\output\ethernetif.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\..\output\ethernetif.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

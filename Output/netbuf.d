@@ -1,11 +1,11 @@
 ..\..\output\netbuf.o: ..\..\Middlewares\LWIP\src\api\netbuf.c
 ..\..\output\netbuf.o: ..\..\Middlewares\lwip\src\include\lwip/opt.h
 ..\..\output\netbuf.o: ..\..\Middlewares\lwip\arch\lwipopts.h
-..\..\output\netbuf.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\..\output\netbuf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\..\output\netbuf.o: ..\..\Middlewares\lwip\src\include\lwip/debug.h
 ..\..\output\netbuf.o: ..\..\Middlewares\lwip\src\include\lwip/arch.h
 ..\..\output\netbuf.o: ..\..\Middlewares\lwip\arch/cc.h
-..\..\output\netbuf.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
+..\..\output\netbuf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\..\output\netbuf.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 ..\..\output\netbuf.o: ..\..\User\stm32f4xx_hal_conf.h
 ..\..\output\netbuf.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h
@@ -13,7 +13,7 @@
 ..\..\output\netbuf.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
 ..\..\output\netbuf.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h
 ..\..\output\netbuf.o: ..\..\Drivers\CMSIS\Include\core_cm4.h
-..\..\output\netbuf.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
+..\..\output\netbuf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\..\output\netbuf.o: ..\..\Drivers\CMSIS\Include\cmsis_version.h
 ..\..\output\netbuf.o: ..\..\Drivers\CMSIS\Include\cmsis_compiler.h
 ..\..\output\netbuf.o: ..\..\Drivers\CMSIS\Include\cmsis_armcc.h
@@ -21,7 +21,7 @@
 ..\..\output\netbuf.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
 ..\..\output\netbuf.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 ..\..\output\netbuf.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy/stm32_hal_legacy.h
-..\..\output\netbuf.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stddef.h
+..\..\output\netbuf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 ..\..\output\netbuf.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h
 ..\..\output\netbuf.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h
 ..\..\output\netbuf.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h
@@ -87,9 +87,9 @@
 ..\..\output\netbuf.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dfsdm.h
 ..\..\output\netbuf.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_lptim.h
 ..\..\output\netbuf.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_mmc.h
-..\..\output\netbuf.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\inttypes.h
-..\..\output\netbuf.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\limits.h
-..\..\output\netbuf.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\..\output\netbuf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
+..\..\output\netbuf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+..\..\output\netbuf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
 ..\..\output\netbuf.o: ..\..\Middlewares\lwip\src\include\lwip/opt.h
 ..\..\output\netbuf.o: ..\..\Middlewares\lwip\src\include\lwip/netbuf.h
 ..\..\output\netbuf.o: ..\..\Middlewares\lwip\src\include\lwip/pbuf.h
@@ -106,4 +106,4 @@
 ..\..\output\netbuf.o: ..\..\Middlewares\lwip\src\include\lwip/priv/mem_priv.h
 ..\..\output\netbuf.o: ..\..\Middlewares\lwip\src\include\lwip/stats.h
 ..\..\output\netbuf.o: ..\..\Middlewares\lwip\src\include\lwip/memp.h
-..\..\output\netbuf.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\..\output\netbuf.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

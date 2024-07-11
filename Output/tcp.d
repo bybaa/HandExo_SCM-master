@@ -1,11 +1,11 @@
 ..\..\output\tcp.o: ..\..\Middlewares\LWIP\src\core\tcp.c
 ..\..\output\tcp.o: ..\..\Middlewares\lwip\src\include\lwip/opt.h
 ..\..\output\tcp.o: ..\..\Middlewares\lwip\arch\lwipopts.h
-..\..\output\tcp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\..\output\tcp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\..\output\tcp.o: ..\..\Middlewares\lwip\src\include\lwip/debug.h
 ..\..\output\tcp.o: ..\..\Middlewares\lwip\src\include\lwip/arch.h
 ..\..\output\tcp.o: ..\..\Middlewares\lwip\arch/cc.h
-..\..\output\tcp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
+..\..\output\tcp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\..\output\tcp.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 ..\..\output\tcp.o: ..\..\User\stm32f4xx_hal_conf.h
 ..\..\output\tcp.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h
@@ -13,7 +13,7 @@
 ..\..\output\tcp.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
 ..\..\output\tcp.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h
 ..\..\output\tcp.o: ..\..\Drivers\CMSIS\Include\core_cm4.h
-..\..\output\tcp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
+..\..\output\tcp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\..\output\tcp.o: ..\..\Drivers\CMSIS\Include\cmsis_version.h
 ..\..\output\tcp.o: ..\..\Drivers\CMSIS\Include\cmsis_compiler.h
 ..\..\output\tcp.o: ..\..\Drivers\CMSIS\Include\cmsis_armcc.h
@@ -21,7 +21,7 @@
 ..\..\output\tcp.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
 ..\..\output\tcp.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 ..\..\output\tcp.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy/stm32_hal_legacy.h
-..\..\output\tcp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stddef.h
+..\..\output\tcp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 ..\..\output\tcp.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h
 ..\..\output\tcp.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h
 ..\..\output\tcp.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h
@@ -87,9 +87,9 @@
 ..\..\output\tcp.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dfsdm.h
 ..\..\output\tcp.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_lptim.h
 ..\..\output\tcp.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_mmc.h
-..\..\output\tcp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\inttypes.h
-..\..\output\tcp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\limits.h
-..\..\output\tcp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\..\output\tcp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
+..\..\output\tcp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+..\..\output\tcp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
 ..\..\output\tcp.o: ..\..\Middlewares\lwip\src\include\lwip/opt.h
 ..\..\output\tcp.o: ..\..\Middlewares\lwip\src\include\lwip/def.h
 ..\..\output\tcp.o: ..\..\Middlewares\lwip\src\include\lwip/mem.h
@@ -118,4 +118,4 @@
 ..\..\output\tcp.o: ..\..\Middlewares\lwip\src\include\lwip/priv/tcp_priv.h
 ..\..\output\tcp.o: ..\..\Middlewares\lwip\src\include\lwip/prot/tcp.h
 ..\..\output\tcp.o: ..\..\Middlewares\lwip\src\include\lwip/nd6.h
-..\..\output\tcp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\..\output\tcp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

@@ -1,11 +1,11 @@
 ..\..\output\mem.o: ..\..\Middlewares\LWIP\src\core\mem.c
 ..\..\output\mem.o: ..\..\Middlewares\lwip\src\include\lwip/opt.h
 ..\..\output\mem.o: ..\..\Middlewares\lwip\arch\lwipopts.h
-..\..\output\mem.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\..\output\mem.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\..\output\mem.o: ..\..\Middlewares\lwip\src\include\lwip/debug.h
 ..\..\output\mem.o: ..\..\Middlewares\lwip\src\include\lwip/arch.h
 ..\..\output\mem.o: ..\..\Middlewares\lwip\arch/cc.h
-..\..\output\mem.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
+..\..\output\mem.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\..\output\mem.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 ..\..\output\mem.o: ..\..\User\stm32f4xx_hal_conf.h
 ..\..\output\mem.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h
@@ -13,7 +13,7 @@
 ..\..\output\mem.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
 ..\..\output\mem.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h
 ..\..\output\mem.o: ..\..\Drivers\CMSIS\Include\core_cm4.h
-..\..\output\mem.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
+..\..\output\mem.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\..\output\mem.o: ..\..\Drivers\CMSIS\Include\cmsis_version.h
 ..\..\output\mem.o: ..\..\Drivers\CMSIS\Include\cmsis_compiler.h
 ..\..\output\mem.o: ..\..\Drivers\CMSIS\Include\cmsis_armcc.h
@@ -21,7 +21,7 @@
 ..\..\output\mem.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
 ..\..\output\mem.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 ..\..\output\mem.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy/stm32_hal_legacy.h
-..\..\output\mem.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stddef.h
+..\..\output\mem.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 ..\..\output\mem.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h
 ..\..\output\mem.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h
 ..\..\output\mem.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h
@@ -87,9 +87,9 @@
 ..\..\output\mem.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dfsdm.h
 ..\..\output\mem.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_lptim.h
 ..\..\output\mem.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_mmc.h
-..\..\output\mem.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\inttypes.h
-..\..\output\mem.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\limits.h
-..\..\output\mem.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\..\output\mem.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
+..\..\output\mem.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+..\..\output\mem.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
 ..\..\output\mem.o: ..\..\Middlewares\lwip\src\include\lwip/opt.h
 ..\..\output\mem.o: ..\..\Middlewares\lwip\src\include\lwip/mem.h
 ..\..\output\mem.o: ..\..\Middlewares\lwip\src\include\lwip/def.h
@@ -103,4 +103,4 @@
 ..\..\output\mem.o: ..\..\Middlewares\lwip\src\include\lwip/priv/memp_priv.h
 ..\..\output\mem.o: ..\..\Middlewares\lwip\src\include\lwip/priv/mem_priv.h
 ..\..\output\mem.o: ..\..\Middlewares\lwip\src\include\lwip/stats.h
-..\..\output\mem.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\..\output\mem.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

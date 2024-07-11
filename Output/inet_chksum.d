@@ -1,11 +1,11 @@
 ..\..\output\inet_chksum.o: ..\..\Middlewares\LWIP\src\core\inet_chksum.c
 ..\..\output\inet_chksum.o: ..\..\Middlewares\lwip\src\include\lwip/opt.h
 ..\..\output\inet_chksum.o: ..\..\Middlewares\lwip\arch\lwipopts.h
-..\..\output\inet_chksum.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\..\output\inet_chksum.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\..\output\inet_chksum.o: ..\..\Middlewares\lwip\src\include\lwip/debug.h
 ..\..\output\inet_chksum.o: ..\..\Middlewares\lwip\src\include\lwip/arch.h
 ..\..\output\inet_chksum.o: ..\..\Middlewares\lwip\arch/cc.h
-..\..\output\inet_chksum.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
+..\..\output\inet_chksum.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\..\output\inet_chksum.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 ..\..\output\inet_chksum.o: ..\..\User\stm32f4xx_hal_conf.h
 ..\..\output\inet_chksum.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h
@@ -13,7 +13,7 @@
 ..\..\output\inet_chksum.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
 ..\..\output\inet_chksum.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h
 ..\..\output\inet_chksum.o: ..\..\Drivers\CMSIS\Include\core_cm4.h
-..\..\output\inet_chksum.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
+..\..\output\inet_chksum.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\..\output\inet_chksum.o: ..\..\Drivers\CMSIS\Include\cmsis_version.h
 ..\..\output\inet_chksum.o: ..\..\Drivers\CMSIS\Include\cmsis_compiler.h
 ..\..\output\inet_chksum.o: ..\..\Drivers\CMSIS\Include\cmsis_armcc.h
@@ -21,7 +21,7 @@
 ..\..\output\inet_chksum.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
 ..\..\output\inet_chksum.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 ..\..\output\inet_chksum.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy/stm32_hal_legacy.h
-..\..\output\inet_chksum.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stddef.h
+..\..\output\inet_chksum.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 ..\..\output\inet_chksum.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h
 ..\..\output\inet_chksum.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h
 ..\..\output\inet_chksum.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h
@@ -87,9 +87,9 @@
 ..\..\output\inet_chksum.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dfsdm.h
 ..\..\output\inet_chksum.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_lptim.h
 ..\..\output\inet_chksum.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_mmc.h
-..\..\output\inet_chksum.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\inttypes.h
-..\..\output\inet_chksum.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\limits.h
-..\..\output\inet_chksum.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\..\output\inet_chksum.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
+..\..\output\inet_chksum.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+..\..\output\inet_chksum.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
 ..\..\output\inet_chksum.o: ..\..\Middlewares\lwip\src\include\lwip/opt.h
 ..\..\output\inet_chksum.o: ..\..\Middlewares\lwip\src\include\lwip/inet_chksum.h
 ..\..\output\inet_chksum.o: ..\..\Middlewares\lwip\src\include\lwip/pbuf.h
@@ -98,4 +98,4 @@
 ..\..\output\inet_chksum.o: ..\..\Middlewares\lwip\src\include\lwip/def.h
 ..\..\output\inet_chksum.o: ..\..\Middlewares\lwip\src\include\lwip/ip4_addr.h
 ..\..\output\inet_chksum.o: ..\..\Middlewares\lwip\src\include\lwip/ip6_addr.h
-..\..\output\inet_chksum.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\..\output\inet_chksum.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

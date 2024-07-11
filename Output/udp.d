@@ -1,11 +1,11 @@
 ..\..\output\udp.o: ..\..\Middlewares\LWIP\src\core\udp.c
 ..\..\output\udp.o: ..\..\Middlewares\lwip\src\include\lwip/opt.h
 ..\..\output\udp.o: ..\..\Middlewares\lwip\arch\lwipopts.h
-..\..\output\udp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\..\output\udp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\..\output\udp.o: ..\..\Middlewares\lwip\src\include\lwip/debug.h
 ..\..\output\udp.o: ..\..\Middlewares\lwip\src\include\lwip/arch.h
 ..\..\output\udp.o: ..\..\Middlewares\lwip\arch/cc.h
-..\..\output\udp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
+..\..\output\udp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\..\output\udp.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 ..\..\output\udp.o: ..\..\User\stm32f4xx_hal_conf.h
 ..\..\output\udp.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h
@@ -13,7 +13,7 @@
 ..\..\output\udp.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
 ..\..\output\udp.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h
 ..\..\output\udp.o: ..\..\Drivers\CMSIS\Include\core_cm4.h
-..\..\output\udp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
+..\..\output\udp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\..\output\udp.o: ..\..\Drivers\CMSIS\Include\cmsis_version.h
 ..\..\output\udp.o: ..\..\Drivers\CMSIS\Include\cmsis_compiler.h
 ..\..\output\udp.o: ..\..\Drivers\CMSIS\Include\cmsis_armcc.h
@@ -21,7 +21,7 @@
 ..\..\output\udp.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
 ..\..\output\udp.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 ..\..\output\udp.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy/stm32_hal_legacy.h
-..\..\output\udp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stddef.h
+..\..\output\udp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 ..\..\output\udp.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h
 ..\..\output\udp.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h
 ..\..\output\udp.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h
@@ -87,9 +87,9 @@
 ..\..\output\udp.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dfsdm.h
 ..\..\output\udp.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_lptim.h
 ..\..\output\udp.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_mmc.h
-..\..\output\udp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\inttypes.h
-..\..\output\udp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\limits.h
-..\..\output\udp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\..\output\udp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
+..\..\output\udp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+..\..\output\udp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
 ..\..\output\udp.o: ..\..\Middlewares\lwip\src\include\lwip/opt.h
 ..\..\output\udp.o: ..\..\Middlewares\lwip\src\include\lwip/udp.h
 ..\..\output\udp.o: ..\..\Middlewares\lwip\src\include\lwip/pbuf.h
@@ -120,4 +120,4 @@
 ..\..\output\udp.o: ..\..\Middlewares\lwip\src\include\lwip/prot/icmp6.h
 ..\..\output\udp.o: ..\..\Middlewares\lwip\src\include\lwip/snmp.h
 ..\..\output\udp.o: ..\..\Middlewares\lwip\src\include\lwip/dhcp.h
-..\..\output\udp.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\..\output\udp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

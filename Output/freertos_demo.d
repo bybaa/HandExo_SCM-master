@@ -5,7 +5,7 @@
 ..\..\output\freertos_demo.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
 ..\..\output\freertos_demo.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h
 ..\..\output\freertos_demo.o: ..\..\Drivers\CMSIS\Include\core_cm4.h
-..\..\output\freertos_demo.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
+..\..\output\freertos_demo.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\..\output\freertos_demo.o: ..\..\Drivers\CMSIS\Include\cmsis_version.h
 ..\..\output\freertos_demo.o: ..\..\Drivers\CMSIS\Include\cmsis_compiler.h
 ..\..\output\freertos_demo.o: ..\..\Drivers\CMSIS\Include\cmsis_armcc.h
@@ -17,7 +17,7 @@
 ..\..\output\freertos_demo.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h
 ..\..\output\freertos_demo.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
 ..\..\output\freertos_demo.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy/stm32_hal_legacy.h
-..\..\output\freertos_demo.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stddef.h
+..\..\output\freertos_demo.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 ..\..\output\freertos_demo.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h
 ..\..\output\freertos_demo.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h
 ..\..\output\freertos_demo.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h
@@ -85,9 +85,9 @@
 ..\..\output\freertos_demo.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_mmc.h
 ..\..\output\freertos_demo.o: ..\..\Drivers\CMSIS\Include\core_cm4.h
 ..\..\output\freertos_demo.o: ..\..\Drivers\./BSP/LCD/lcd.h
-..\..\output\freertos_demo.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\..\output\freertos_demo.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\..\output\freertos_demo.o: ..\..\Drivers\./SYSTEM/usart/usart.h
-..\..\output\freertos_demo.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
+..\..\output\freertos_demo.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\..\output\freertos_demo.o: ..\..\Drivers\./SYSTEM/delay/delay.h
 ..\..\output\freertos_demo.o: ..\..\Middlewares\./MALLOC/malloc.h
 ..\..\output\freertos_demo.o: ..\..\Drivers\./BSP/KEY/key.h
@@ -95,7 +95,7 @@
 ..\..\output\freertos_demo.o: ..\..\Drivers\./BSP/ETHERNET/ethernet.h
 ..\..\output\freertos_demo.o: ..\..\Middlewares\lwip\lwip_app\lwip_demo.h
 ..\..\output\freertos_demo.o: ..\..\Middlewares\lwip\arch\lwipopts.h
-..\..\output\freertos_demo.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\..\output\freertos_demo.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 ..\..\output\freertos_demo.o: ..\..\Middlewares\FreeRTOS\include\FreeRTOS.h
 ..\..\output\freertos_demo.o: ..\..\User\FreeRTOSConfig.h
 ..\..\output\freertos_demo.o: ..\..\Middlewares\FreeRTOS\include\projdefs.h
@@ -107,4 +107,4 @@
 ..\..\output\freertos_demo.o: ..\..\Middlewares\FreeRTOS\include\list.h
 ..\..\output\freertos_demo.o: ..\..\Middlewares\FreeRTOS\include\queue.h
 ..\..\output\freertos_demo.o: ..\..\Drivers\BSP/SENSOR/sensor.h
-..\..\output\freertos_demo.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\math.h
+..\..\output\freertos_demo.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

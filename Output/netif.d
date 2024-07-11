@@ -1,11 +1,11 @@
 ..\..\output\netif.o: ..\..\Middlewares\LWIP\src\core\netif.c
 ..\..\output\netif.o: ..\..\Middlewares\lwip\src\include\lwip/opt.h
 ..\..\output\netif.o: ..\..\Middlewares\lwip\arch\lwipopts.h
-..\..\output\netif.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\..\output\netif.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\..\output\netif.o: ..\..\Middlewares\lwip\src\include\lwip/debug.h
 ..\..\output\netif.o: ..\..\Middlewares\lwip\src\include\lwip/arch.h
 ..\..\output\netif.o: ..\..\Middlewares\lwip\arch/cc.h
-..\..\output\netif.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
+..\..\output\netif.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\..\output\netif.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 ..\..\output\netif.o: ..\..\User\stm32f4xx_hal_conf.h
 ..\..\output\netif.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h
@@ -13,7 +13,7 @@
 ..\..\output\netif.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
 ..\..\output\netif.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h
 ..\..\output\netif.o: ..\..\Drivers\CMSIS\Include\core_cm4.h
-..\..\output\netif.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
+..\..\output\netif.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\..\output\netif.o: ..\..\Drivers\CMSIS\Include\cmsis_version.h
 ..\..\output\netif.o: ..\..\Drivers\CMSIS\Include\cmsis_compiler.h
 ..\..\output\netif.o: ..\..\Drivers\CMSIS\Include\cmsis_armcc.h
@@ -21,7 +21,7 @@
 ..\..\output\netif.o: ..\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
 ..\..\output\netif.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 ..\..\output\netif.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy/stm32_hal_legacy.h
-..\..\output\netif.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stddef.h
+..\..\output\netif.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 ..\..\output\netif.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h
 ..\..\output\netif.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h
 ..\..\output\netif.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h
@@ -87,11 +87,11 @@
 ..\..\output\netif.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dfsdm.h
 ..\..\output\netif.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_lptim.h
 ..\..\output\netif.o: ..\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_mmc.h
-..\..\output\netif.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\inttypes.h
-..\..\output\netif.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\limits.h
-..\..\output\netif.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\ctype.h
+..\..\output\netif.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\inttypes.h
+..\..\output\netif.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+..\..\output\netif.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
 ..\..\output\netif.o: ..\..\Middlewares\lwip\src\include\lwip/opt.h
-..\..\output\netif.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\..\output\netif.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 ..\..\output\netif.o: ..\..\Middlewares\lwip\src\include\lwip/def.h
 ..\..\output\netif.o: ..\..\Middlewares\lwip\src\include\lwip/ip_addr.h
 ..\..\output\netif.o: ..\..\Middlewares\lwip\src\include\lwip/ip4_addr.h
@@ -130,4 +130,3 @@
 ..\..\output\netif.o: ..\..\Middlewares\lwip\src\include\lwip/sys.h
 ..\..\output\netif.o: ..\..\Middlewares\lwip\arch/sys_arch.h
 ..\..\output\netif.o: ..\..\Middlewares\lwip\src\include\netif/ethernet.h
-..\..\output\netif.o: ..\..\Middlewares\lwip\src\include\lwip/dhcp.h
