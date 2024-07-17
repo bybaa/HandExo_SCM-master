@@ -28,7 +28,7 @@
 #include "./BSP/SRAM/sram.h"
 #include "./MALLOC/malloc.h"
 #include "freertos_demo.h"
-
+#include "./BSP/SENSOR/sensor.h" 
 
 int main(void)
 {
@@ -41,7 +41,9 @@ int main(void)
     lcd_init();                         /* 初始化LCD */
     key_init();                         /* 初始化按键 */
     sram_init();                        /* SRAM初始化 */
-    
+    Sensor_GPIO();
+	
+	
     my_mem_init(SRAMIN);                /* 初始化内部SRAM内存池 */
     my_mem_init(SRAMEX);                /* 初始化外部SRAM内存池 */
     my_mem_init(SRAMCCM);               /* 初始化内部CCM内存池 */

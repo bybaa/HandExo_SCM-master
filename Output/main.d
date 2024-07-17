@@ -94,3 +94,5 @@
 ..\..\output\main.o: ..\..\Drivers\./BSP/SRAM/sram.h
 ..\..\output\main.o: ..\..\Middlewares\./MALLOC/malloc.h
 ..\..\output\main.o: ..\..\User\freertos_demo.h
+..\..\output\main.o: ..\..\Drivers\./BSP/SENSOR/sensor.h
+..\..\output\main.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\math.h

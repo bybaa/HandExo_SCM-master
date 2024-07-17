@@ -88,8 +88,11 @@ void lwip_demo(void)
         {
             while (1)
             {
+				GetDegree();
                 /* 第四步：如果指定的按键按下时，会发送信息 */
-                if ((g_lwip_send_flag & LWIP_SEND_DATA) == LWIP_SEND_DATA)
+//                if ((g_lwip_send_flag & LWIP_SEND_DATA) == LWIP_SEND_DATA)
+				
+				if (1)
                 {
                     sentbuf = netbuf_new();
                     netbuf_alloc(sentbuf, sizeof(angle_udp));

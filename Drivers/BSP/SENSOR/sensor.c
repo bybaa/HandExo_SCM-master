@@ -622,13 +622,13 @@ void GetDegree(void)
 	angle_udp[0] = angle[0];	angle_udp[1] = angle[1];	angle_udp[2] = angle[2];	angle_udp[3] = angle[3];	angle_udp[4] = angle[4];	angle_udp[5] = angle[5];
 	angle_udp[6] = angle2[0];	angle_udp[7] = angle2[1];	angle_udp[8] = angle2[2];	angle_udp[9] = angle2[3];	angle_udp[10] = angle2[4];	angle_udp[11] = angle2[5];
 	angle_udp[12] = angle3[0];	angle_udp[13] = angle3[1];	angle_udp[14] = angle3[2];	angle_udp[15] = angle3[3];	angle_udp[16] = angle3[4];	angle_udp[17] = angle3[5];
-//	printf("\n\r");
-//	printf("index angle 1 : %0.2f\n",angle[0]);
-//	printf("index angle 2 : %0.2f\n",angle[1]);
-//	printf("index angle 3 : %0.2f\n",angle[2]);
-//	printf("index angle 4 : %0.2f\n",angle[3]);
-//	printf("index angle 5 : %0.2f\n",angle[4]);
-//	printf("index angle 6 : %0.2f\n",angle[5]);
+	printf("\n\r");
+	printf("index angle 1 : %0.2f\n",angle[0]);
+	printf("index angle 2 : %0.2f\n",angle[1]);
+	printf("index angle 3 : %0.2f\n",angle[2]);
+	printf("index angle 4 : %0.2f\n",angle[3]);
+	printf("index angle 5 : %0.2f\n",angle[4]);
+	printf("index angle 6 : %0.2f\n",angle[5]);
 }
 
 /*                                                                 */
