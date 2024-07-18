@@ -38,7 +38,7 @@
 #define DEST_IP_ADDR3               111
 
 #define LWIP_DEMO_RX_BUFSIZE         200   /* 定义最大接收数据长度 */
-#define LWIP_DEMO_PORT               8080  /* 定义连接的本地端口号 */
+#define LWIP_DEMO_PORT               8089  /* 定义连接的本地端口号 */
 
 /* 接收数据缓冲区 */
 uint8_t g_lwip_demo_recvbuf[LWIP_DEMO_RX_BUFSIZE]; 
