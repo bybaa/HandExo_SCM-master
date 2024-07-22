@@ -134,7 +134,7 @@ void lwip_demo(void)
                     
                     if (lwip_err == errQUEUE_FULL)
                     {
-                        printf("队列Key_Queue已满，数据发送失败!\r\n");
+//                        printf("队列Key_Queue已满，数据发送失败!\r\n");
                     }
                     
                     netbuf_delete(recvbuf);                             /* 删除buf */

@@ -330,7 +330,7 @@ void display_task(void *pvParameters)
 {
     pvParameters = pvParameters;
     uint8_t *buffer;
-    
+    float fbuffer;
     while (1)
     {
         buffer = mymalloc(SRAMIN,200);
@@ -341,6 +341,8 @@ void display_task(void *pvParameters)
             
             if (xQueueReceive(g_display_queue,buffer,portMAX_DELAY))
             {
+				fbuffer = atof((char*)buffer);
+				printf("data:%.4f",fbuffer);
                 lcd_fill(30, 300, 300, 320, WHITE); /* 清上一次数据 */
                 /* 显示接收到的数据 */
                 lcd_show_string(30, 300, lcddev.width - 30, lcddev.height - 230, 16, (char *)buffer, RED); 
