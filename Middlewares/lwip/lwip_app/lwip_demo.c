@@ -142,7 +142,7 @@ void lwip_demo(void)
                 
                 else vTaskDelay(5);                                     /* —” ±5ms */
 				
-                vTaskDelay(10);
+//                vTaskDelay(5);
             }
         }
         else printf("UDP∞Û∂® ß∞‹\r\n");
