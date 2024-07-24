@@ -34,6 +34,7 @@
 #include "task.h"
 #include "queue.h"
 #include "BSP/SENSOR/sensor.h"
+#include "string.h"
 
 /******************************************************************************************************/
 /*FreeRTOS配置*/
@@ -342,15 +343,21 @@ void display_task(void *pvParameters)
             if (xQueueReceive(g_display_queue,buffer,portMAX_DELAY))
             {
 				fbuffer = atof((char*)buffer);
-				printf("data:%.4f",fbuffer);
+				printf("data:%.4f\n",fbuffer);
                 lcd_fill(30, 300, 300, 320, WHITE); /* 清上一次数据 */
                 /* 显示接收到的数据 */
                 lcd_show_string(30, 300, lcddev.width - 30, lcddev.height - 230, 16, (char *)buffer, RED); 
             }
-        }
+        
         
         myfree(SRAMIN,buffer);          /*释放内存 */
         
         vTaskDelay(5);
     }
 }
+
+//float* char2float(char* strings)
+//{
+//	char*
+//		
+//}

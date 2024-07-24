@@ -123,7 +123,6 @@ uint8_t lwip_comm_init(void)
     while (ethernet_init())                     /* 初始化以太网芯片,如果失败的话就重试5次 */
     {
         retry++;
-
         if (retry > 5)
         {
             retry = 0;                          /* 以太网芯片初始化失败 */

@@ -24,4 +24,6 @@
 
 void freertos_demo(void);   /* 创建lwIP的任务函数 */
 
+float* char2float(char* strings);
+
 #endif

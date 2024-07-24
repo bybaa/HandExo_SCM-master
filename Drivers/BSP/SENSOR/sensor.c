@@ -551,12 +551,6 @@ void GetDegreeo(void)
 		anglef3[xun]=out3[xun]*45.0/512.0;			//finger3 初始角度
 	};
 	
-//	printf("hand1 angle1:%f\n\r",anglef[0]);
-//	printf("hand1 angle2:%f\n\r",anglef[1]);
-//	printf("hand1 angle3:%f\n\r",anglef[2]);
-//	printf("hand1 angle4:%f\n\r",anglef[3]);
-//	printf("hand1 angle5:%f\n\r",anglef[4]);
-//	printf("hand1 angle6:%f\n\r",anglef[5]);
 }
 /*******************************************************************/	
 /*函数名称：Get_LegsDegree                                       */
@@ -613,22 +607,10 @@ void GetDegree(void)
 	
 		
 	}; 
-  
-//  if(OUT1)err1_flag=0;//正常为0，错误为1
-//  else err1_flag=1;
-//  if(OUT2)err2_flag=0;
-//  else err2_flag=1;
 
 	angle_udp[0] = angle[0];	angle_udp[1] = angle[1];	angle_udp[2] = angle[2];	angle_udp[3] = angle[3];	angle_udp[4] = angle[4];	angle_udp[5] = angle[5];
 	angle_udp[6] = angle2[0];	angle_udp[7] = angle2[1];	angle_udp[8] = angle2[2];	angle_udp[9] = angle2[3];	angle_udp[10] = angle2[4];	angle_udp[11] = angle2[5];
 	angle_udp[12] = angle3[0];	angle_udp[13] = angle3[1];	angle_udp[14] = angle3[2];	angle_udp[15] = angle3[3];	angle_udp[16] = angle3[4];	angle_udp[17] = angle3[5];
-	printf("\n\r");
-//	printf("index angle 1 : %0.2f\n",angle[0]);
-//	printf("index angle 2 : %0.2f\n",angle[1]);
-//	printf("index angle 3 : %0.2f\n",angle[2]);
-//	printf("index angle 4 : %0.2f\n",angle[3]);
-//	printf("index angle 5 : %0.2f\n",angle[4]);
-//	printf("index angle 6 : %0.2f\n",angle[5]);
 }
 
 /*                                                                 */
@@ -651,29 +633,4 @@ void send_bytes(void) //发送单传感器数据字节串
 }
 	
  
-/*******************************************************************************
-* Function Name  : GPIO_Configuration
-* Description    : Configures the different GPIO ports.
-* Input          : None
-* Output         : None
-* Return         : None
-* Attention		 : None
-*******************************************************************************/
-//void GPIO_Configuration(void)
-//{
-//  GPIO_InitTypeDef GPIO_InitStructure;
-//  /* CAN Periph clock enable */
-//  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB | RCC_APB2Periph_AFIO ,ENABLE);
-//  RCC_APB1PeriphClockCmd(RCC_APB1Periph_CAN1, ENABLE);
-//  GPIO_PinRemapConfig(GPIO_Remap1_CAN1,ENABLE); 
-//  /* Configure CAN pin: RX */
-//  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8;
-//  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-//  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
-//  GPIO_Init(GPIOB, &GPIO_InitStructure);   
-//  /* Configure CAN pin: TX */
-//  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9;
-//  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
-//  GPIO_Init(GPIOB, &GPIO_InitStructure);	     
 
-//}
