@@ -64,7 +64,7 @@ void Sensor_GPIO(void)
 		//磁编码器传感器1I/O配置
 	//PB3:CSn1, PB5:CLK1, PC2:CSn2, PC3:CLK2, PB12:CSn3, PB13:CLK3
 	
-	GPIO_InitStructure.Pin  = GPIO_PIN_3|GPIO_PIN_5|GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_6;      
+	GPIO_InitStructure.Pin  = GPIO_PIN_3|GPIO_PIN_5;      
   	GPIO_InitStructure.Mode  = GPIO_MODE_OUTPUT_PP;
   	GPIO_InitStructure.Speed = GPIO_SPEED_FREQ_HIGH;
   	HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);
@@ -84,13 +84,6 @@ void Sensor_GPIO(void)
   	GPIO_InitStructure.Speed = GPIO_SPEED_FREQ_HIGH;
   	HAL_GPIO_Init(GPIOC, &GPIO_InitStructure);
 		
-		GPIO_InitStructure.Pin = GPIO_PIN_2|GPIO_PIN_3;          //PC2,PC3
-		GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
-		GPIO_InitStructure.Speed = GPIO_SPEED_FREQ_HIGH;
-		HAL_GPIO_Init(GPIOC, &GPIO_InitStructure);
-	
-		//初始化，prog不用为低
-		PROG1_L;
 	
 	
 /// ---------------------------------------------------------
@@ -121,18 +114,18 @@ void read_change(void)
 		uint8_t Ocf2[6],Cof2[6],Lin2[6];
 		uint8_t Ocf3[6],Cof3[6],Lin3[6];
 	
-  	CSn1_H; CSn2_H;	CSn3_H;								//CSn片选先保持高电平
-  	CLK1_H; CLK2_H;	CLK3_H;								//时钟保持高电平
+  	CSn1_H; 								//CSn片选先保持高电平
+  	CLK1_H; 								//时钟保持高电平
   	delay_us(1);
 	
-  	CSn1_L;	CSn2_L;	CSn3_L; 							//如果CSn变为低电平，数据输出DO将从高阻状态变为高电平并启动读取操作
+  	CSn1_L;								//如果CSn变为低电平，数据输出DO将从高阻状态变为高电平并启动读取操作
   	delay_us(1);
-  	CLK1_L; CLK2_L; CLK3_L;
+  	CLK1_L; 
   	delay_us(1);
 		
   	for(xun=0;xun<15;xun++)											//daisy chain 1 18bit
   	{
-		CLK1_H;	CLK2_H; CLK3_H;									//数据将在CLK的第一个上升沿锁存至输出移位寄存器内
+		CLK1_H;									//数据将在CLK的第一个上升沿锁存至输出移位寄存器内
   		delay_us(1);
 
     	if(DO1)
@@ -176,15 +169,15 @@ void read_change(void)
 		}
 						
 		delay_us(1);
-    	CLK1_L; CLK2_L; CLK3_L;
+    	CLK1_L; 
   		delay_us(1);
   	};
 	
   	for(xun=0;xun<4;xun++)						//这个时钟为什么要反复拉高拉低4次？？？
   	{   
-		CLK1_H; CLK2_H; CLK3_H;
+		CLK1_H; 
 		delay_us(1);
-		CLK1_L; CLK2_L; CLK3_L;
+		CLK1_L; 
 		delay_us(1);
 	};
 	
@@ -193,7 +186,7 @@ void read_change(void)
   	for(xun=0;xun<15;xun++)						//daisy chain 1 18bit
   	{
 		
-      	CLK1_H;	CLK2_H; CLK3_H;											//数据将在CLK的第一个上升沿锁存至输出移位寄存器内
+      	CLK1_H;												//数据将在CLK的第一个上升沿锁存至输出移位寄存器内
 		delay_us(1);
       
 		if(DO1)
@@ -230,15 +223,15 @@ void read_change(void)
 		}
 					
   		delay_us(1);
-      	CLK1_L; CLK2_L; CLK3_L;
+      	CLK1_L; 
   		delay_us(1);
   	}
 	
   	for(xun=0;xun<4;xun++)
   	{    
-		CLK1_H; CLK2_H; CLK3_H;
+		CLK1_H; 
 		delay_us(1);
-      	CLK1_L;	CLK2_L;	CLK3_L;
+      	CLK1_L;	
 		delay_us(1);
 	};
 	
@@ -246,7 +239,7 @@ void read_change(void)
   	for(xun=0;xun<15;xun++)						//daisy chain 1 18bit
   	{
 		
-      	CLK1_H;	CLK2_H; CLK3_H;											//数据将在CLK的第一个上升沿锁存至输出移位寄存器内
+      	CLK1_H;											//数据将在CLK的第一个上升沿锁存至输出移位寄存器内
 		delay_us(1);
       
 		if(DO1)
@@ -283,15 +276,15 @@ void read_change(void)
 		}
 					
   		delay_us(1);
-      	CLK1_L; CLK2_L; CLK3_L;
+      	CLK1_L; 
   		delay_us(1);
   	}
 	
   	for(xun=0;xun<4;xun++)
   	{    
-		CLK1_H; CLK2_H; CLK3_H;
+		CLK1_H;
 		delay_us(1);
-      	CLK1_L;	CLK2_L;	CLK3_L;
+      	CLK1_L;	
 		delay_us(1);
 	};
 	
@@ -300,7 +293,7 @@ void read_change(void)
   	for(xun=0;xun<15;xun++)//daisy chain 1 18bit
   	{
 		
-      	CLK1_H; CLK2_H; CLK3_H;
+      	CLK1_H;
 		delay_us(1);
       	if(DO1)
       	{
@@ -336,14 +329,14 @@ void read_change(void)
 		}
 		
 		delay_us(1);
-      	CLK1_L; CLK2_L; CLK3_L;
+      	CLK1_L; 
 		delay_us(1);
   	}
   	for(xun=0;xun<4;xun++)
   	{    
-		CLK1_H; CLK2_H; CLK3_H;
+		CLK1_H; 
 		delay_us(1);
-      	CLK1_L; CLK2_L; CLK3_L;
+      	CLK1_L;
 		delay_us(1);
 	};
 	
@@ -352,7 +345,7 @@ void read_change(void)
   	for(xun=0;xun<15;xun++)//daisy chain 1 18bit
   	{
 		
-      	CLK1_H; CLK2_H; CLK3_H;
+      	CLK1_H; 
 		delay_us(1);
       	if(DO1)
       	{
@@ -388,14 +381,14 @@ void read_change(void)
 		}
 		
 		delay_us(1);
-      	CLK1_L; CLK2_L; CLK3_L;
+      	CLK1_L; 
 		delay_us(1);
   	}
   	for(xun=0;xun<4;xun++)
   	{    
-		CLK1_H; CLK2_H; CLK3_H;
+		CLK1_H; 
 		delay_us(1);
-      	CLK1_L; CLK2_L; CLK3_L;
+      	CLK1_L; 
 		delay_us(1);
 	};
 	
@@ -404,7 +397,7 @@ void read_change(void)
   	for(xun=0;xun<15;xun++)//daisy chain 1 18bit
   	{
 		
-      	CLK1_H;	CLK2_H; CLK3_H;
+      	CLK1_H;	
 		delay_us(1);
       	if(DO1)
       	{
@@ -440,14 +433,14 @@ void read_change(void)
 		}
 					
 		delay_us(1);
-      	CLK1_L; CLK2_L; CLK3_L;
+      	CLK1_L; 
 		delay_us(1);
   	}
 	
 	delay_us(1);
 	
-	CSn1_H; CSn2_H; CSn3_H; 		//通过一个CSN的高脉冲启动后续测量
-	CLK1_H;	CLK2_H; CLK3_H;
+	CSn1_H;  		//通过一个CSN的高脉冲启动后续测量
+	CLK1_H;	
 	delay_us(1);
 	
 	
@@ -490,47 +483,6 @@ void read_change(void)
 
 }
 
-/*******************************************************************/	
-/*函数名称：zero_otp                                            */
-/*输    入：无   												   */
-/*输    出：无                                                     */
-/*功能说明：磁编码器非永久性零位设置                                            */
-/*                                                                 */
-/*******************************************************************/
-//void zero_otp(void)
-//{
-//  unsigned int tmpdata[5];
-//  unsigned int ssivalue=0;
-//  unsigned char i;
-//  for(i=0;i<5;i++){tmpdata[i]=read_change();}//读取当前角度采集值 
-////  tmpdata[4]|=0x0004;//PWM禁止，禁止LIN报警
-//  ssivalue=(((tmpdata[4]<<3) | (0<<15))| 0x3);
-//  delay_ms(10);//延时10ms
-//  CSn1_L;
-//  CLK1_L;//时钟先为低
-//  PROG1_L;
-//  delay_ms(10);//延时10ms
-//  PROG1_H;
-//  delay_ms(10);//延时10ms
-//  CSn1_H; //CSn片选先保持高电平
-//  delay_ms(10);//延时10ms
-//  for(i=0;i<16;i++)//daisy chain 1 18bit
-//  {
-//   if(ssivalue&0x8000){PROG1_H;}
-//   else{PROG1_L;}
-//   delay_ms(1);//延时1ms
-//   ssivalue=ssivalue<<1;
-//   CLK1_H;//数据将在CLK的第一个上升沿锁存至输出移位寄存器内
-//   delay_ms(2);//延时2ms
-//   CLK1_L;
-//   delay_ms(1);//延时1ms
-// }
-//   PROG1_L;
-//   CLK1_L;
-//   delay_ms(10);//延时10ms
-//   CSn1_L;//通过一个CSN的低脉冲启动后续测量
-//}
-/*******************************************************************/	
 
 
 /*******************************************************************/	
