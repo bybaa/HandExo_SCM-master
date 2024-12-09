@@ -47,6 +47,8 @@ char *g_lwip_demo_sendbuf = "ALIENT89EK DATA\r\n";
 /* 数据发送标志位 */
 uint8_t g_lwip_send_flag;
 extern QueueHandle_t g_display_queue;   /* 显示消息队列句柄 */
+
+
 /**
  * @brief       lwip_demo实验入口
  * @param       无
@@ -58,7 +60,11 @@ void lwip_demo(void)
 	extern float angle2[6];
 	extern float angle3[6];	
 	extern float angle_udp[18];
+	extern float fBuffer[3];
 	
+	float udp_data[21];
+	
+	int i = 0;
     err_t err;
     static struct netconn *udpconn;
     static struct netbuf  *recvbuf;
@@ -84,19 +90,34 @@ void lwip_demo(void)
 		
 		GetDegreeo();
 		
+		
+
         if (err == ERR_OK)                                      /* 绑定完成 */
         {
             while (1)
             {
 				GetDegree();
-                /* 第四步：如果指定的按键按下时，会发送信息 */
-//                if ((g_lwip_send_flag & LWIP_SEND_DATA) == LWIP_SEND_DATA)
 				
+				for(;i<21;++i)
+				{
+					if(i < 18) 
+					{
+						udp_data[i] = angle_udp[i];
+					
+					}
+					else 
+					{
+						udp_data[i] = fBuffer[i-18];
+					}
+					
+					
+				}				
+				i = 0;
 				if (1)
                 {
                     sentbuf = netbuf_new();
-                    netbuf_alloc(sentbuf, sizeof(angle_udp));
-                    memcpy(sentbuf->p->payload, (void *)angle_udp, sizeof(angle_udp));
+                    netbuf_alloc(sentbuf, sizeof(udp_data));
+                    memcpy(sentbuf->p->payload, (void *)udp_data, sizeof(udp_data));
                     err = netconn_send(udpconn, sentbuf);               /* 将netbuf中的数据发送出去 */
 
                     if (err != ERR_OK)

@@ -108,3 +108,4 @@
 ..\..\output\freertos_demo.o: ..\..\Middlewares\FreeRTOS\include\queue.h
 ..\..\output\freertos_demo.o: ..\..\Drivers\BSP/SENSOR/sensor.h
 ..\..\output\freertos_demo.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\math.h
+..\..\output\freertos_demo.o: ..\..\Drivers\./BSP/ADC/adc.h

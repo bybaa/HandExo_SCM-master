@@ -24,6 +24,6 @@
 
 void freertos_demo(void);   /* 创建lwIP的任务函数 */
 
-float* char2float(char* strings);
-
+float* char2float(const char* str, int * count);
+char* strdup(const char* s);
 #endif

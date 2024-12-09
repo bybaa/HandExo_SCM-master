@@ -35,6 +35,11 @@
 #include "queue.h"
 #include "BSP/SENSOR/sensor.h"
 #include "string.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+//#include "./BSP/LCD/lcd.h"
+#include "./BSP/ADC/adc.h"
 
 /******************************************************************************************************/
 /*FreeRTOS配置*/
@@ -71,20 +76,28 @@ void led_task(void *pvParameters);          /* 任务函数 */
 TaskHandle_t KEYTask_Handler;               /* 任务句柄 */
 void key_task(void *pvParameters);          /* 任务函数 */
 
+
 /* DISPLAY_TASK 任务 配置
  * 包括: 任务句柄 任务优先级 堆栈大小 创建任务
  */
-#define DISPLAY_TASK_PRIO       12          /* 任务优先级 */
-#define DISPLAY_STK_SIZE        512         /* 任务堆栈大小 */
-TaskHandle_t DISPLAYTask_Handler;           /* 任务句柄 */
-void display_task(void *pvParameters);      /* 任务函数 */
+#define ADC_TASK_PRIO       13          /* 任务优先级 */
+#define ADC_STK_SIZE        512         /* 任务堆栈大小 */
+TaskHandle_t ADCTask_Handler;           /* 任务句柄 */
+void adc_task(void *pvParameters);      /* 任务函数 */
+
 
 /* 显示消息队列的数量 */
 #define DISPLAYMSG_Q_NUM    20   /* 显示消息队列的数量 */
 QueueHandle_t g_display_queue;     /* 显示消息队列句柄 */
 
-/******************************************************************************************************/
+#define LWIP_DEMO_PORT 8089
 
+
+#define ADC_DMA_BUF_SIZE        50 * 2      /* ADC DMA采集 BUF大小, 应等于ADC通道数的整数倍 */
+uint16_t g_adc_dma_buf[ADC_DMA_BUF_SIZE];   /* ADC DMA BUF */
+
+extern uint8_t g_adc_dma_sta;               /* DMA传输状态标志, 0, 未完成; 1, 已完成 */
+float fBuffer[ADC_CH_NUM];
 
 /**
  * @breif       加载UI
@@ -95,72 +108,51 @@ QueueHandle_t g_display_queue;     /* 显示消息队列句柄 */
 void lwip_test_ui(uint8_t mode)
 {
     uint8_t speed;
-    uint8_t buf[30];
     
     if (mode & 1<< 0)
     {
-        lcd_show_string(6, 10, 200, 32, 32, "STM32F407", RED);
-        lcd_show_string(6, 40, lcddev.width, 24	, 24, "Opening HandExo...", DARKBLUE);
-        lcd_show_string(6, 70, 200, 16, 16, "ATOM@ALIENTEK", DARKBLUE);
-		lcd_show_string(6, 90, 200, 16, 16, "BaoYangbin 2024/5/4", BLACK);
-		
-		lcd_show_string(5, 680, 400, 50, 16, "Author: BaoYangbin(Yangbin.Bao@zju.edu.cn)",MAGENTA);
-		lcd_show_string(5, 700, 300, 16, 16, "Date: 2024-05-24",MAGENTA);
-		lcd_show_string(5, 720, 300, 40, 16, "Project: HandExo for telerobotics",MAGENTA);
-		lcd_show_string(5, 740, 400, 40, 16, "Thanks to Su Yuan and Gaofeng Li",MAGENTA);
-		lcd_show_string(5, 760, 400, 40, 16, "for their contributions to this project!",MAGENTA);
+		printf("STM32F407.\n");
+		printf("Opening HandExo...\n");
     }
     
     if (mode & 1 << 1)
     {
-        lcd_show_string(5, 110, 200, 16, 16, "lwIP Init Successed", MAGENTA);
+		printf("lwIP Init Successed.\n");
         
         if (g_lwipdev.dhcpstatus == 2)
         {
-            sprintf((char*)buf,"DHCP IP:%d.%d.%d.%d",g_lwipdev.ip[0],g_lwipdev.ip[1],g_lwipdev.ip[2],g_lwipdev.ip[3]);     /* 显示动态IP地址 */
-        
-			lcd_show_string(5, 130, 200, 16, 16, (char*)buf, MAGENTA);
+
+			printf("DHCP IP:%d.%d.%d.%d\n",g_lwipdev.ip[0],g_lwipdev.ip[1],g_lwipdev.ip[2],g_lwipdev.ip[3]);
 			
-			sprintf((char*)buf,"DHCP GW:%d.%d.%d.%d",g_lwipdev.gateway[0],g_lwipdev.gateway[1],g_lwipdev.gateway[2],g_lwipdev.gateway[3]);
-		
-		    lcd_show_string(5, 150, 200, 16, 16, (char*)buf, MAGENTA);
+			printf("DHCP GW:%d.%d.%d.%d\n",g_lwipdev.gateway[0],g_lwipdev.gateway[1],g_lwipdev.gateway[2],g_lwipdev.gateway[3]);
 			
-			sprintf((char*)buf,"NET MASK:%d.%d.%d.%d",g_lwipdev.netmask[0],g_lwipdev.netmask[1],g_lwipdev.netmask[2],g_lwipdev.netmask[3]);	//打印子网掩码地址
+			printf("NET MASK:%d.%d.%d.%d\n",g_lwipdev.netmask[0],g_lwipdev.netmask[1],g_lwipdev.netmask[2],g_lwipdev.netmask[3]);	//打印子网掩码地址
 			
-			lcd_show_string(5, 170, 210, 16, 16, (char*)buf, MAGENTA);
 		}
         else
         {
-            sprintf((char*)buf,"Static IP:%d.%d.%d.%d",g_lwipdev.ip[0],g_lwipdev.ip[1],g_lwipdev.ip[2],g_lwipdev.ip[3]);    /* 打印静态IP地址 */
-                
-			lcd_show_string(5, 130, 200, 16, 16, (char*)buf, MAGENTA);
+            printf("Static IP:%d.%d.%d.%d\n",g_lwipdev.ip[0],g_lwipdev.ip[1],g_lwipdev.ip[2],g_lwipdev.ip[3]);    /* 打印静态IP地址 */
+               
+			printf("Static GW:%d.%d.%d.%d\n",g_lwipdev.gateway[0],g_lwipdev.gateway[1],g_lwipdev.gateway[2],g_lwipdev.gateway[3]);
 			
-			sprintf((char*)buf,"Static GW:%d.%d.%d.%d",g_lwipdev.gateway[0],g_lwipdev.gateway[1],g_lwipdev.gateway[2],g_lwipdev.gateway[3]);
-		
-		    lcd_show_string(5, 150, 200, 16, 16, (char*)buf, MAGENTA);
+			printf("NET MASK:%d.%d.%d.%d\n",g_lwipdev.netmask[0],g_lwipdev.netmask[1],g_lwipdev.netmask[2],g_lwipdev.netmask[3]);	//打印子网掩码地址
 			
-			sprintf((char*)buf,"NET MASK:%d.%d.%d.%d",g_lwipdev.netmask[0],g_lwipdev.netmask[1],g_lwipdev.netmask[2],g_lwipdev.netmask[3]);	//打印子网掩码地址
 			
-			lcd_show_string(5, 170, 210, 16, 16, (char*)buf, MAGENTA);
 		}
         
-		sprintf((char*)buf,"Remote Ip:%d.%d.%d.%d",g_lwipdev.remoteip[0],g_lwipdev.remoteip[1],g_lwipdev.remoteip[2],g_lwipdev.remoteip[3]);
-        lcd_show_string(5, 190, 210, 16, 16, (char*)buf, MAGENTA);
-		
+		printf("Remote Ip:%d.%d.%d.%d\n",g_lwipdev.remoteip[0],g_lwipdev.remoteip[1],g_lwipdev.remoteip[2],g_lwipdev.remoteip[3]);
+		printf("Port: %d\n",LWIP_DEMO_PORT );
 		speed = ethernet_chip_get_speed();      /* 得到网速 */
   
         if (speed)
         {
-            lcd_show_string(5, 240, 200, 16, 16, "Ethernet Speed:100M", MAGENTA);
+			printf("Ethernet Speed:100M\n");
         }
         else
         {
-            lcd_show_string(5, 240, 200, 16, 16, "Ethernet Speed:10M", MAGENTA);
+            printf("Ethernet Speed:10M\n");
         }
-        
-        lcd_show_string(5, 260, 200, 16, 16, "KEY0:Send data", MAGENTA);
-        lcd_show_string(5, 280, lcddev.width - 30, lcddev.height - 190, 16, "Receive Data:", BLUE); /* 提示消息 */
-		
+	
     }
 }
 
@@ -197,10 +189,9 @@ void start_task(void *pvParameters)
     
     while (lwip_comm_init() != 0)
     {
-        lcd_show_string(30, 110, 200, 16, 16, "lwIP Init failed!!", RED);
+		printf("lwIP Init failed!!\n");
         delay_ms(500);
-        lcd_fill(30, 50, 200 + 30, 50 + 16, WHITE);
-        lcd_show_string(30, 110, 200, 16, 16, "Retrying...       ", RED);
+		printf("Retrying...\n");
         delay_ms(500);
         LED1_TOGGLE();
     }
@@ -245,14 +236,13 @@ void start_task(void *pvParameters)
                 (UBaseType_t    )LED_TASK_PRIO,
                 (TaskHandle_t*  )&LEDTask_Handler);
 
-    /* 显示任务 */
-    xTaskCreate((TaskFunction_t )display_task,
-                (const char*    )"display_task",
-                (uint16_t       )DISPLAY_STK_SIZE,
-                (void*          )NULL,
-                (UBaseType_t    )DISPLAY_TASK_PRIO,
-                (TaskHandle_t*  )&DISPLAYTask_Handler);
-
+	xTaskCreate((TaskFunction_t )adc_task,
+			(const char*    )"adc_task",
+			(uint16_t       )ADC_STK_SIZE,
+			(void*          )NULL,
+			(UBaseType_t    )ADC_TASK_PRIO,
+			(TaskHandle_t*  )&ADCTask_Handler);
+				
     vTaskDelete(StartTask_Handler); /* 删除开始任务 */
     taskEXIT_CRITICAL();            /* 退出临界区 */
     
@@ -289,18 +279,12 @@ void key_task(void *pvParameters)
     while (1)
     {
         key = key_scan(0);
-
-        if (KEY0_PRES ==key)
-        {
-            g_lwip_send_flag |= LWIP_SEND_DATA; /* 标记LWIP有数据要发送 */
-        }
         
 		if (KEY1_PRES == key)
 		{
 			GetDegreeo();
-			lcd_show_string(5,400,200,16,16,"has been reset", RED);
+			printf("Encoder has been reset!\n");
 			vTaskDelay(100);
-			lcd_fill(5, 400, 300, 420, WHITE);
 		}
         vTaskDelay(10);
     }
@@ -322,42 +306,55 @@ void led_task(void *pvParameters)
     }
 }
 
-/**
- * @brief       显示任务
- * @param       pvParameters : 传入参数(未用到)
- * @retval      无
- */
-void display_task(void *pvParameters)
+void adc_task(void *pvParameters)
 {
+	
+	uint16_t i, j;
+    uint16_t adcx;
+    uint32_t sum;
+    float temp;
     pvParameters = pvParameters;
-    uint8_t *buffer;
-    float fbuffer;
+
+    adc_nch_dma_init((uint32_t)&g_adc_dma_buf);
+
+    adc_nch_dma_enable(ADC_DMA_BUF_SIZE);   /* 启动ADC DMA多通道采集 */
+
     while (1)
     {
-        buffer = mymalloc(SRAMIN,200);
-        
-        if (g_display_queue != NULL)
+        if (g_adc_dma_sta == 1)
         {
-            memset(buffer,0,200);       /* 清除缓冲区 */
-            
-            if (xQueueReceive(g_display_queue,buffer,portMAX_DELAY))
+            /* 循环显示通道0~通道5的结果 */
+            for(j = 0; j < ADC_CH_NUM; j++)  /* 遍历6个通道 */
             {
-				fbuffer = atof((char*)buffer);
-				printf("data:%.4f\n",fbuffer);
-                lcd_fill(30, 300, 300, 320, WHITE); /* 清上一次数据 */
-                /* 显示接收到的数据 */
-                lcd_show_string(30, 300, lcddev.width - 30, lcddev.height - 230, 16, (char *)buffer, RED); 
-            }
-        
-        
-        myfree(SRAMIN,buffer);          /*释放内存 */
-        
-        vTaskDelay(5);
-    }
-}
+                sum = 0; /* 清零 */
+                for (i = 0; i < ADC_DMA_BUF_SIZE / ADC_CH_NUM; i++)  /* 每个通道采集了10次数据,进行10次累加 */
+                {
+                    sum += g_adc_dma_buf[(ADC_CH_NUM * i) + j];  /* 相同通道的转换数据累加 */
+                }
+                adcx = sum / (ADC_DMA_BUF_SIZE / ADC_CH_NUM);    /* 取平均值 */
+                
+                /* 显示结果 */
+//                lcd_show_xnum(108, 110 + (j * 30), adcx, 4, 12, 0, BLUE);   /* 显示ADC采样后的原始值 */
 
-//float* char2float(char* strings)
-//{
-//	char*
-//		
-//}
+                temp = (float)adcx * (3.3 / 4096);      /* 获取计算后的带小数的实际电压值，比如3.1111 */
+				
+				fBuffer[j] = temp;
+                adcx = temp;    /* 赋值整数部分给adcx变量，因为adcx为u16整形 */
+//                lcd_show_xnum(108, 122 + (j * 30), adcx, 1, 12, 0, BLUE);   /* 显示电压值的整数部分，3.1111的话，这里就是显示3 */
+
+                temp -= adcx;   /* 把已经显示的整数部分去掉，留下小数部分，比如3.1111-3=0.1111 */
+                temp *= 1000;   /* 小数部分乘以1000，例如：0.1111就转换为111.1，相当于保留三位小数。 */
+//                lcd_show_xnum(120, 122 + (j * 30), temp, 3, 12, 0X80, BLUE);/* 显示小数部分（前面转换为了整形显示），这里显示的就是111. */
+            }
+ 
+            g_adc_dma_sta = 0;  /* 清除DMA采集完成状态标志 */
+            adc_nch_dma_enable(ADC_DMA_BUF_SIZE);   /* 启动下一次ADC DMA多通道采集 */
+        }
+        
+        LED0_TOGGLE();
+        vTaskDelay(100);
+    
+	}
+
+}
+   

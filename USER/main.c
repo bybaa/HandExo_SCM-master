@@ -38,11 +38,10 @@ int main(void)
     usart_init(115200);                 /* 串口初始化为115200 */
     usmart_dev.init(84);                /* 初始化USMART */
     led_init();                         /* 初始化LED */
-    lcd_init();                         /* 初始化LCD */
     key_init();                         /* 初始化按键 */
     sram_init();                        /* SRAM初始化 */
     Sensor_GPIO();
-	
+//	lcd_init();                             /* 初始化LCD */
 	
     my_mem_init(SRAMIN);                /* 初始化内部SRAM内存池 */
     my_mem_init(SRAMEX);                /* 初始化外部SRAM内存池 */
