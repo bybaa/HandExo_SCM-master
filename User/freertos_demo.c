@@ -39,7 +39,7 @@
 #include <stdio.h>
 
 //#include "./BSP/LCD/lcd.h"
-#include "./BSP/ADC/adc.h"
+#include "./BSP/AD7616/AD7616.h"
 
 /******************************************************************************************************/
 /*FreeRTOS配置*/
@@ -81,7 +81,7 @@ void key_task(void *pvParameters);          /* 任务函数 */
  * 包括: 任务句柄 任务优先级 堆栈大小 创建任务
  */
 #define ADC_TASK_PRIO       13          /* 任务优先级 */
-#define ADC_STK_SIZE        512         /* 任务堆栈大小 */
+#define ADC_STK_SIZE        128         /* 任务堆栈大小 */  
 TaskHandle_t ADCTask_Handler;           /* 任务句柄 */
 void adc_task(void *pvParameters);      /* 任务函数 */
 
@@ -92,12 +92,13 @@ QueueHandle_t g_display_queue;     /* 显示消息队列句柄 */
 
 #define LWIP_DEMO_PORT 8089
 
+//#define ADC_DMA_BUF_SIZE        50 * 2      /* ADC DMA采集 BUF大小, 应等于ADC通道数的整数倍 */
+//uint16_t g_adc_dma_buf[ADC_DMA_BUF_SIZE];   /* ADC DMA BUF */
 
-#define ADC_DMA_BUF_SIZE        50 * 2      /* ADC DMA采集 BUF大小, 应等于ADC通道数的整数倍 */
-uint16_t g_adc_dma_buf[ADC_DMA_BUF_SIZE];   /* ADC DMA BUF */
+//extern uint8_t g_adc_dma_sta;               /* DMA传输状态标志, 0, 未完成; 1, 已完成 */
+//float fBuffer[ADC_CH_NUM];
 
-extern uint8_t g_adc_dma_sta;               /* DMA传输状态标志, 0, 未完成; 1, 已完成 */
-float fBuffer[ADC_CH_NUM];
+
 
 /**
  * @breif       加载UI
@@ -297,64 +298,74 @@ void key_task(void *pvParameters)
  */
 void led_task(void *pvParameters)
 {
+	extern float angle[6];
     pvParameters = pvParameters;
 
     while (1)
     {
         LED1_TOGGLE();
+		GetDegree();
+		//printf("angle: %.2f\n",angle[0]);
         vTaskDelay(100);
     }
 }
 
 void adc_task(void *pvParameters)
 {
-	
-	uint16_t i, j;
-    uint16_t adcx;
-    uint32_t sum;
-    float temp;
+	extern uint16_t ad7616_data[AD7616_CHANNEL_GROUP_MAX * AD7616_CHANNEL_GROUP_NUM] ;
+	extern float ad7616f_data[AD7616_CHANNEL_GROUP_MAX * AD7616_CHANNEL_GROUP_NUM];
     pvParameters = pvParameters;
+	
+#if USE_SOFTWARE_MODE
+	AD7616_Init(Software_Mode);
+#if USE_PARALLEL_MODE
+#else
+	AD7616_Set_Serial_Output_Format(Serial_Line_2_Output);
+#endif
+	AD7616_Reset();
+	AD7616_Set_Range(Range_10_V);
+	AD7616_Channel_Group_Select(Channel_Group_0);
+#else
+	AD7616_Init(Hardware_Mode);
+#if USE_PARALLEL_MODE
+#else
+	AD7616_Set_Serial_Output_Format(Serial_Line_2_Output);
+#endif
+	AD7616_Set_Range(Range_10_V);
+	AD7616_Channel_Group_Select(Channel_Group_0);
+	AD7616_Reset();
+#endif
 
-    adc_nch_dma_init((uint32_t)&g_adc_dma_buf);
+  while (1) {
+	  
+    /* 芯片手册31页图51可知。切换通道后，数据读取的是上一次CONVST的值。 */
+    /* 如切换到通道1，得到的数值是通道8的值 */
+    for (uint8_t channel_group = 0; channel_group < AD7616_CHANNEL_GROUP_MAX;
+         channel_group++) {
+      AD7616_Channel_Group_Select(channel_group);
+      AD7616_Conversion();
+      if (!channel_group) {
+        AD7616_Read_Data(&ad7616_data[Channel_Group_7 * 2]);
+      } else {
+        AD7616_Read_Data(&ad7616_data[(channel_group - 1) * 2]);
+      }
+    }
+    for (uint8_t i = 0; i < AD7616_CHANNEL_GROUP_MAX; i++) {
+//      printf("A%d: %.1f mv 0x%x %ld B%d: %.1f mv 0x%x %ld\r\n", i,
+//             AD7616_Digital2Voltage(ad7616_data[i * 2]), ad7616_data[i * 2],
+//             ad7616_data[i * 2], i,
+//             AD7616_Digital2Voltage(ad7616_data[i * 2 + 1]),
+//             ad7616_data[i * 2 + 1], ad7616_data[i * 2 + 1]);
+		
+		ad7616f_data[i*2] = AD7616_Digital2Voltage(ad7616_data[i*2]);
+		ad7616f_data[i*2+1] = AD7616_Digital2Voltage(ad7616_data[i*2+1]);
+		
+		// printf("A%d: %.1f B%d: %.1f\n",i,ad7616f_data[i*2], i, ad7616f_data[i*2+1]);
+    }
+	
+    vTaskDelay(50);
+  }
 
-    adc_nch_dma_enable(ADC_DMA_BUF_SIZE);   /* 启动ADC DMA多通道采集 */
-
-    while (1)
-    {
-        if (g_adc_dma_sta == 1)
-        {
-            /* 循环显示通道0~通道5的结果 */
-            for(j = 0; j < ADC_CH_NUM; j++)  /* 遍历6个通道 */
-            {
-                sum = 0; /* 清零 */
-                for (i = 0; i < ADC_DMA_BUF_SIZE / ADC_CH_NUM; i++)  /* 每个通道采集了10次数据,进行10次累加 */
-                {
-                    sum += g_adc_dma_buf[(ADC_CH_NUM * i) + j];  /* 相同通道的转换数据累加 */
-                }
-                adcx = sum / (ADC_DMA_BUF_SIZE / ADC_CH_NUM);    /* 取平均值 */
-                
-                /* 显示结果 */
-//                lcd_show_xnum(108, 110 + (j * 30), adcx, 4, 12, 0, BLUE);   /* 显示ADC采样后的原始值 */
-
-                temp = (float)adcx * (3.3 / 4096);      /* 获取计算后的带小数的实际电压值，比如3.1111 */
-				
-				fBuffer[j] = temp;
-                adcx = temp;    /* 赋值整数部分给adcx变量，因为adcx为u16整形 */
-//                lcd_show_xnum(108, 122 + (j * 30), adcx, 1, 12, 0, BLUE);   /* 显示电压值的整数部分，3.1111的话，这里就是显示3 */
-
-                temp -= adcx;   /* 把已经显示的整数部分去掉，留下小数部分，比如3.1111-3=0.1111 */
-                temp *= 1000;   /* 小数部分乘以1000，例如：0.1111就转换为111.1，相当于保留三位小数。 */
-//                lcd_show_xnum(120, 122 + (j * 30), temp, 3, 12, 0X80, BLUE);/* 显示小数部分（前面转换为了整形显示），这里显示的就是111. */
-            }
- 
-            g_adc_dma_sta = 0;  /* 清除DMA采集完成状态标志 */
-            adc_nch_dma_enable(ADC_DMA_BUF_SIZE);   /* 启动下一次ADC DMA多通道采集 */
-        }
-        
-        LED0_TOGGLE();
-        vTaskDelay(100);
-    
-	}
 
 }
    

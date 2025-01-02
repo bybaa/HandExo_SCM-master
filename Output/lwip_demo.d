@@ -131,3 +131,4 @@
 ..\..\output\lwip_demo.o: ..\..\Middlewares\lwip\lwip_app\lwip_demo.h
 ..\..\output\lwip_demo.o: ..\..\Drivers\BSP/SENSOR/sensor.h
 ..\..\output\lwip_demo.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\math.h
+..\..\output\lwip_demo.o: ..\..\Drivers\BSP/AD7616/AD7616.h

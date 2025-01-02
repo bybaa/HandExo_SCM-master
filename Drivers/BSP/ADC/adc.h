@@ -46,7 +46,7 @@
 #define ADC_ADCX_CHY_CLK_ENABLE()           do{ __HAL_RCC_ADC1_CLK_ENABLE(); }while(0)      /* ADC1 时钟使能 */
 
 
-#define ADC_CH_NUM                          3                                               /* 需要转换的通道数目 */
+#define ADC_CH_NUM                          6                                               /* 需要转换的通道数目 */
 
 /* ADC单通道/多通道 DMA采集 DMA数据流相关 定义
  * 注意: 这里我们的通道还是使用上面的定义.

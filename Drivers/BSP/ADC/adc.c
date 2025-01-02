@@ -279,6 +279,10 @@ void adc_nch_dma_init(uint32_t mar)
     adc_channel_set(&g_adc_nch_dma_handle, ADC_CHANNEL_0, 1, ADC_SAMPLETIME_480CYCLES);  /* 设置采样规则序列1~6 */
     adc_channel_set(&g_adc_nch_dma_handle, ADC_CHANNEL_5, 2, ADC_SAMPLETIME_480CYCLES);
 	adc_channel_set(&g_adc_nch_dma_handle, ADC_CHANNEL_10, 3, ADC_SAMPLETIME_480CYCLES);
+	
+	adc_channel_set(&g_adc_nch_dma_handle, ADC_CHANNEL_4, 4, ADC_SAMPLETIME_480CYCLES);  /* 设置采样规则序列1~6 */
+    adc_channel_set(&g_adc_nch_dma_handle, ADC_CHANNEL_6, 5, ADC_SAMPLETIME_480CYCLES);
+	adc_channel_set(&g_adc_nch_dma_handle, ADC_CHANNEL_13, 6, ADC_SAMPLETIME_480CYCLES);
 
     HAL_NVIC_SetPriority(ADC_ADCX_DMASx_IRQn, 3, 3);    /* 设置DMA中断优先级为3，子优先级为3 */
     HAL_NVIC_EnableIRQ(ADC_ADCX_DMASx_IRQn);            /* 使能DMA中断 */
@@ -301,12 +305,12 @@ void adc_nch_dma_gpio_init(void)
     __HAL_RCC_GPIOA_CLK_ENABLE();                    /* 开启GPIOA引脚时钟 */
 
     /* AD采集引脚模式设置,模拟输入 */
-    gpio_init_struct.Pin = GPIO_PIN_0 | GPIO_PIN_5; /* GPIOA0~5 */;
+    gpio_init_struct.Pin = GPIO_PIN_0 | GPIO_PIN_5 | GPIO_PIN_4 | GPIO_PIN_6  ; /* GPIOA0~5 */;
     gpio_init_struct.Mode = GPIO_MODE_ANALOG;
     gpio_init_struct.Pull = GPIO_NOPULL;
     HAL_GPIO_Init(GPIOA, &gpio_init_struct);
 
-    gpio_init_struct.Pin = GPIO_PIN_0; /* GPIOA0~5 */;
+    gpio_init_struct.Pin = GPIO_PIN_0 | GPIO_PIN_3; /* GPIOA0~5 */;
     gpio_init_struct.Mode = GPIO_MODE_ANALOG;
     gpio_init_struct.Pull = GPIO_NOPULL;
     HAL_GPIO_Init(GPIOC, &gpio_init_struct);

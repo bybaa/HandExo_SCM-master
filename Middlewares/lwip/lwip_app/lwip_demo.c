@@ -30,15 +30,16 @@
 #include "lwip/api.h"
 #include "lwip_demo.h"
 #include "BSP/SENSOR/sensor.h"
+#include "BSP/AD7616/AD7616.h"
 
 /* 这个必须填写正确，远程IP地址 */
 #define DEST_IP_ADDR0               192
 #define DEST_IP_ADDR1               168
-#define DEST_IP_ADDR2                 2
-#define DEST_IP_ADDR3               111
+#define DEST_IP_ADDR2                 1
+#define DEST_IP_ADDR3               10
 
 #define LWIP_DEMO_RX_BUFSIZE         200   /* 定义最大接收数据长度 */
-#define LWIP_DEMO_PORT               8089  /* 定义连接的本地端口号 */
+#define LWIP_DEMO_PORT               1111  /* 定义连接的本地端口号 */
 
 /* 接收数据缓冲区 */
 uint8_t g_lwip_demo_recvbuf[LWIP_DEMO_RX_BUFSIZE]; 
@@ -60,19 +61,17 @@ void lwip_demo(void)
 	extern float angle2[6];
 	extern float angle3[6];	
 	extern float angle_udp[18];
-	extern float fBuffer[3];
+	extern float ad7616f_data[AD7616_CHANNEL_GROUP_MAX * AD7616_CHANNEL_GROUP_NUM];
 	
-	float udp_data[21];
+	float udp_data[16];
 	
 	int i = 0;
     err_t err;
+	
     static struct netconn *udpconn;
-    static struct netbuf  *recvbuf;
     static struct netbuf  *sentbuf;
     ip_addr_t destipaddr;
-    uint32_t data_len = 0;
-    struct pbuf *q;
-    BaseType_t lwip_err;
+
     
     /* 第一步：创建udp控制块 */
     udpconn = netconn_new(NETCONN_UDP);
@@ -96,23 +95,22 @@ void lwip_demo(void)
         {
             while (1)
             {
-				GetDegree();
-				
-				for(;i<21;++i)
+//				for(i = 0;i<34;++i)
+//				{
+//					if(i < 18) 
+//					{
+//						udp_data[i] = angle_udp[i];
+//					}
+//					else 
+//					{
+//						udp_data[i] = ad7616f_data[i-18];
+//					}
+//				}
+				for (i = 0 ; i <16 ;++i)
 				{
-					if(i < 18) 
-					{
-						udp_data[i] = angle_udp[i];
-					
-					}
-					else 
-					{
-						udp_data[i] = fBuffer[i-18];
-					}
-					
-					
-				}				
-				i = 0;
+					udp_data[i] = ad7616f_data[i];
+				}
+				
 				if (1)
                 {
                     sentbuf = netbuf_new();
@@ -129,41 +127,8 @@ void lwip_demo(void)
                     g_lwip_send_flag &= ~LWIP_SEND_DATA;                  /* 清除数据发送标志 */
                     netbuf_delete(sentbuf);                             /* 删除buf */
                 }
-                
-				                /* 第五步：接收数据 */
-                netconn_recv(udpconn, &recvbuf);
-
-                if (recvbuf != NULL)                                    /* 接收到数据 */
-                {
-                    memset(g_lwip_demo_recvbuf, 0, LWIP_DEMO_RX_BUFSIZE); /* 数据接收缓冲区清零 */
-
-                    for (q = recvbuf->p; q != NULL; q = q->next)        /* 遍历完整个pbuf链表 */
-                    {
-                        /* 判断要拷贝到UDP_DEMO_RX_BUFSIZE中的数据是否大于UDP_DEMO_RX_BUFSIZE的剩余空间，如果大于 */
-                        /* 的话就只拷贝UDP_DEMO_RX_BUFSIZE中剩余长度的数据，否则的话就拷贝所有的数据 */
-                        if (q->len > (LWIP_DEMO_RX_BUFSIZE - data_len)) memcpy(g_lwip_demo_recvbuf + data_len, q->payload, (LWIP_DEMO_RX_BUFSIZE - data_len)); /* 拷贝数据 */
-                        else memcpy(g_lwip_demo_recvbuf + data_len, q->payload, q->len);
-
-                        data_len += q->len;
-
-                        if (data_len > LWIP_DEMO_RX_BUFSIZE) break;     /* 超出TCP客户端接收数组,跳出 */
-                    }
-
-                    data_len = 0;                                       /* 复制完成后data_len要清零 */
-
-                    lwip_err = xQueueSend(g_display_queue,&g_lwip_demo_recvbuf,0);
-                    
-                    if (lwip_err == errQUEUE_FULL)
-                    {
-//                        printf("队列Key_Queue已满，数据发送失败!\r\n");
-                    }
-                    
-                    netbuf_delete(recvbuf);                             /* 删除buf */
-                }   
-                
-                else vTaskDelay(5);                                     /* 延时5ms */
 				
-//                vTaskDelay(5);
+                vTaskDelay(1);
             }
         }
         else printf("UDP绑定失败\r\n");
