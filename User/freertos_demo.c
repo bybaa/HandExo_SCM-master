@@ -93,7 +93,7 @@ QueueHandle_t g_display_queue;     /* 显示消息队列句柄 */
 #define LWIP_DEMO_PORT 8089
 
 
-#define ADC_DMA_BUF_SIZE        50 * 2      /* ADC DMA采集 BUF大小, 应等于ADC通道数的整数倍 */
+#define ADC_DMA_BUF_SIZE        50 * ADC_CH_NUM      /* ADC DMA采集 BUF大小, 应等于ADC通道数的整数倍 */
 uint16_t g_adc_dma_buf[ADC_DMA_BUF_SIZE];   /* ADC DMA BUF */
 
 extern uint8_t g_adc_dma_sta;               /* DMA传输状态标志, 0, 未完成; 1, 已完成 */
@@ -302,6 +302,7 @@ void led_task(void *pvParameters)
     while (1)
     {
         LED1_TOGGLE();
+		GetDegree();
         vTaskDelay(100);
     }
 }
@@ -345,7 +346,8 @@ void adc_task(void *pvParameters)
                 temp -= adcx;   /* 把已经显示的整数部分去掉，留下小数部分，比如3.1111-3=0.1111 */
                 temp *= 1000;   /* 小数部分乘以1000，例如：0.1111就转换为111.1，相当于保留三位小数。 */
 //                lcd_show_xnum(120, 122 + (j * 30), temp, 3, 12, 0X80, BLUE);/* 显示小数部分（前面转换为了整形显示），这里显示的就是111. */
-            }
+				printf("adc%d: %.2f\n",j,fBuffer[j]);
+			}
  
             g_adc_dma_sta = 0;  /* 清除DMA采集完成状态标志 */
             adc_nch_dma_enable(ADC_DMA_BUF_SIZE);   /* 启动下一次ADC DMA多通道采集 */
