@@ -39,7 +39,7 @@
 #define DEST_IP_ADDR3               10
 
 #define LWIP_DEMO_RX_BUFSIZE         200   /* 定义最大接收数据长度 */
-#define LWIP_DEMO_PORT               1111  /* 定义连接的本地端口号 */
+#define LWIP_DEMO_PORT               1112  /* 定义连接的本地端口号 */
 
 /* 接收数据缓冲区 */
 uint8_t g_lwip_demo_recvbuf[LWIP_DEMO_RX_BUFSIZE]; 
@@ -63,7 +63,7 @@ void lwip_demo(void)
 	extern float angle_udp[18];
 	extern float ad7616f_data[AD7616_CHANNEL_GROUP_MAX * AD7616_CHANNEL_GROUP_NUM];
 	
-	float udp_data[16];
+	float udp_data[34];
 	
 	int i = 0;
     err_t err;
@@ -89,27 +89,29 @@ void lwip_demo(void)
 		
 		GetDegreeo();
 		
-		
-
         if (err == ERR_OK)                                      /* 绑定完成 */
         {
             while (1)
             {
-//				for(i = 0;i<34;++i)
-//				{
-//					if(i < 18) 
-//					{
-//						udp_data[i] = angle_udp[i];
-//					}
-//					else 
-//					{
-//						udp_data[i] = ad7616f_data[i-18];
-//					}
-//				}
-				for (i = 0 ; i <16 ;++i)
+				for(i = 0;i<34;++i)
 				{
-					udp_data[i] = ad7616f_data[i];
+					if(i < 18) 
+					{
+						udp_data[i] = angle_udp[i];
+						
+						printf("%d: %.2f ",i,angle_udp[i]);
+					}
+					else 
+					{
+						udp_data[i] = ad7616f_data[i-18];
+					}
 				}
+				
+				printf("\n");
+//				for (i = 0 ; i <16 ;++i)
+//				{
+//					udp_data[i] = ad7616f_data[i];
+//				}
 				
 				if (1)
                 {
