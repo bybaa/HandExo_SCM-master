@@ -8,12 +8,12 @@
 
 #define CSn1_H   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_SET)    //PB3:CSN1										
 #define CSn1_L   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET)
-#define DO1      HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_4)                   //PB4:DO1
+#define DO1      HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_4)                   //PB4:DO1        thumb
 #define CLK1_H   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET)    //PB5:CLK1
 #define CLK1_L   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET)  
 		
-#define DO2      HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_0)                   //PC0:DO2
-#define DO3      HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_6)                   //PC6:DO3
+#define DO2      HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_0)                   //PC0:DO2        index
+#define DO3      HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_6)                   //PC6:DO3        middle
 
 
 void send_bytes(void); 															// 发送单传感器数据字符串

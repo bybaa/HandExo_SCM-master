@@ -99,12 +99,14 @@ void lwip_demo(void)
 					{
 						udp_data[i] = angle_udp[i];
 						
-						printf("%d: %.2f ",i,angle_udp[i]);
+//						printf("%d: %.2f ",i,angle_udp[i]);
 					}
 					else 
 					{
 						udp_data[i] = ad7616f_data[i-18];
 					}
+					
+					printf("%d: %.2f ",i,udp_data[i]);
 				}
 				
 				printf("\n");
