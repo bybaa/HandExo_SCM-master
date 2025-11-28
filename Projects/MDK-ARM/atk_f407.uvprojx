@@ -603,6 +603,16 @@
               <FileType>5</FileType>
               <FilePath>..\..\Drivers\BSP\AD7616\AD7616.h</FilePath>
             </File>
+            <File>
+              <FileName>PWM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Drivers\BSP\PWM\PWM.c</FilePath>
+            </File>
+            <File>
+              <FileName>PWM.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\Drivers\BSP\PWM\PWM.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

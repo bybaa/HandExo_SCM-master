@@ -4,7 +4,7 @@
  * @author      正点原子团队(ALIENTEK)
  * @version     V1.0
  * @date        2020-04-04
- * @brief       lwIP Netconn UDP 实验
+ * @brief       lwIP SOCKET UDP 实验
  * @license     Copyright (c) 2020-2032, 广州市星翼电子科技有限公司
  ****************************************************************************************************
  * @attention
@@ -21,10 +21,12 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
+#include "semphr.h"
 #include <stdint.h>
 #include <stdio.h>
-#include "./BSP/LCD/lcd.h"
 #include <lwip/sockets.h>
+#include "./BSP/LCD/lcd.h"
+#include "./MALLOC/malloc.h"
 #include "lwip/opt.h"
 #include "lwip/sys.h"
 #include "lwip/api.h"
@@ -32,23 +34,31 @@
 #include "BSP/SENSOR/sensor.h"
 #include "BSP/AD7616/AD7616.h"
 
-/* 这个必须填写正确，远程IP地址 */
-#define DEST_IP_ADDR0               192
-#define DEST_IP_ADDR1               168
-#define DEST_IP_ADDR2                 1
-#define DEST_IP_ADDR3               10
+/* 需要自己设置远程IP地址 */
+#define IP_ADDR   "192.168.1.10"
 
-#define LWIP_DEMO_RX_BUFSIZE         200   /* 定义最大接收数据长度 */
-#define LWIP_DEMO_PORT               1111  /* 定义连接的本地端口号 */
+#define LWIP_DEMO_PORT               1111   /* 连接的本地端口号 */
+#define LWIP_SEND_THREAD_PRIO       ( tskIDLE_PRIORITY + 3 ) /* 发送数据线程优先级 */
 
-/* 接收数据缓冲区 */
-uint8_t g_lwip_demo_recvbuf[LWIP_DEMO_RX_BUFSIZE]; 
 /* 发送数据内容 */
-char *g_lwip_demo_sendbuf = "ALIENT89EK DATA\r\n";
+char g_lwip_demo_sendbuf[] = "ALIENTEK DATA \r\n";
 /* 数据发送标志位 */
 uint8_t g_lwip_send_flag;
-extern QueueHandle_t g_display_queue;   /* 显示消息队列句柄 */
+struct sockaddr_in g_local_info;              /* 定义Socket地址信息结构体 */
+socklen_t g_sock_fd;                          /* 定义一个Socket接口 */
+static void lwip_send_thread(void *arg);
 
+extern QueueHandle_t g_display_queue;         /* 显示消息队列句柄 */
+
+/**
+ * @brief       发送数据线程
+ * @param       无
+ * @retval      无
+ */
+void lwip_data_send(void)
+{
+    sys_thread_new("lwip_send_thread", lwip_send_thread, NULL, 512, LWIP_SEND_THREAD_PRIO );
+}
 
 /**
  * @brief       lwip_demo实验入口
@@ -57,85 +67,91 @@ extern QueueHandle_t g_display_queue;   /* 显示消息队列句柄 */
  */
 void lwip_demo(void)
 {
-	extern float angle[6];
+    BaseType_t lwip_err;
+	
+	float fbuf[3];
+    char *tbuf;
+    lwip_data_send();                                   /* 创建发送数据线程 */
+    memset(&g_local_info, 0, sizeof(struct sockaddr_in)); /* 将服务器地址清空 */
+    g_local_info.sin_len = sizeof(g_local_info);
+    g_local_info.sin_family = AF_INET;                    /* IPv4地址 */
+    g_local_info.sin_port = htons(LWIP_DEMO_PORT);        /* 设置端口号 */
+    g_local_info.sin_addr.s_addr = htons(INADDR_ANY);     /* 设置本地IP地址 */
+
+    g_sock_fd = socket(AF_INET, SOCK_DGRAM, 0);           /* 建立一个新的socket连接 */
+    
+    tbuf = malloc(200); /* 申请内存 */
+    sprintf((char *)tbuf, "Port:%d", LWIP_DEMO_PORT); /* 客户端端口号 */
+    lcd_show_string(5, 150, 200, 16, 16, tbuf, BLUE);
+    
+    /* 建立绑定 */
+    bind(g_sock_fd, (struct sockaddr *)&g_local_info, sizeof(struct sockaddr_in));
+
+    while (1)
+    {	
+		memset(fbuf, 0, sizeof(fbuf)); 
+		recv(g_sock_fd, (void *)fbuf, sizeof(fbuf), 0);
+		
+		lwip_err = xQueueSend(g_display_queue,&fbuf,0);
+		
+		// printf("data: %.3f\n", fbuf[0]);
+        
+        if (lwip_err == errQUEUE_FULL)
+        {
+            printf("队列Key_Queue已满，数据发送失败!\r\n");
+        }
+		
+		vTaskDelay(1);
+    }
+}
+
+/**
+ * @brief       发送数据线程函数
+ * @param       pvParameters : 传入参数(未用到)
+ * @retval      无
+ */
+void lwip_send_thread(void *pvParameters)
+{
+    pvParameters = pvParameters;
+    extern float angle[6];
 	extern float angle2[6];
-	extern float angle3[6];	
+	extern float angle3[6];
 	extern float angle_udp[18];
 	extern float ad7616f_data[AD7616_CHANNEL_GROUP_MAX * AD7616_CHANNEL_GROUP_NUM];
 	
 	float udp_data[34];
+	int i ;
+    g_local_info.sin_addr.s_addr = inet_addr(IP_ADDR);                /* 需要发送的远程IP地址 */
 	
-	int i = 0;
-    err_t err;
 	
-    static struct netconn *udpconn;
-    static struct netbuf  *sentbuf;
-    ip_addr_t destipaddr;
-
-    
-    /* 第一步：创建udp控制块 */
-    udpconn = netconn_new(NETCONN_UDP);
-    /* 定义接收超时时间 */
-    udpconn->recv_timeout = 10;
-
-    if (udpconn != NULL)                                        /* 判断创建控制块释放成功 */
-    {
-        /* 第二步：绑定控制块、本地IP和端口 */
-        err = netconn_bind(udpconn, IP_ADDR_ANY, LWIP_DEMO_PORT);
-        /* 构造目的IP地址 */
-        IP4_ADDR(&destipaddr, DEST_IP_ADDR0,DEST_IP_ADDR1,DEST_IP_ADDR2,DEST_IP_ADDR3);
-        /* 第三步：连接或者建立对话框 */
-        netconn_connect(udpconn, &destipaddr, LWIP_DEMO_PORT);  /* 连接到远端主机 */
+	GetDegreeo();
+    while (1)
+    {	
+		for (i=0; i<34; ++i) 
+		{
+			if (i < 18)
+			{
+				udp_data[i] = angle_udp[i];
+//				printf("%.2f , ", udp_data[i]);
+			}
+			else 
+			{
+				udp_data[i] = ad7616f_data[i-18];
+			}
+		}
+//		printf("\n");
 		
-		GetDegreeo();
-		
-        if (err == ERR_OK)                                      /* 绑定完成 */
+        if (1)     /* 有数据要发送 */
         {
-            while (1)
-            {
-				for(i = 0;i<34;++i)
-				{
-					if(i < 18) 
-					{
-						udp_data[i] = angle_udp[i];
-						
-//						printf("%d: %.2f ",i,angle_udp[i]);
-					}
-					else 
-					{
-						udp_data[i] = ad7616f_data[i-18];
-					}
-					
-					printf("%d: %.2f ",i,udp_data[i]);
-				}
-				
-				printf("\n");
-//				for (i = 0 ; i <16 ;++i)
-//				{
-//					udp_data[i] = ad7616f_data[i];
-//				}
-				
-				if (1)
-                {
-                    sentbuf = netbuf_new();
-                    netbuf_alloc(sentbuf, sizeof(udp_data));
-                    memcpy(sentbuf->p->payload, (void *)udp_data, sizeof(udp_data));
-                    err = netconn_send(udpconn, sentbuf);               /* 将netbuf中的数据发送出去 */
+            sendto(g_sock_fd,                                         /* scoket */
+                  (float *)udp_data,                        /* 发送的数据 */
+                  sizeof(udp_data), 0,                     /* 发送的数据大小 */
+                  (struct sockaddr *)&g_local_info,                   /* 接收端地址信息 */ 
+                  sizeof(g_local_info));                              /* 接收端地址信息大小 */
 
-                    if (err != ERR_OK)
-                    {
-                        printf("发送失败\r\n");
-                        netbuf_delete(sentbuf);                         /* 删除buf */
-                    }
-
-                    g_lwip_send_flag &= ~LWIP_SEND_DATA;                  /* 清除数据发送标志 */
-                    netbuf_delete(sentbuf);                             /* 删除buf */
-                }
-				
-                vTaskDelay(1);
-            }
+            g_lwip_send_flag &= ~LWIP_SEND_DATA;
         }
-        else printf("UDP绑定失败\r\n");
-    }
-    else printf("UDP连接创建失败\r\n");
+        
+        vTaskDelay(1);
+   }
 }

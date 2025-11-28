@@ -40,6 +40,7 @@
 
 //#include "./BSP/LCD/lcd.h"
 #include "./BSP/AD7616/AD7616.h"
+#include "BSP/PWM/PWM.h"
 
 /******************************************************************************************************/
 /*FreeRTOS配置*/
@@ -75,6 +76,14 @@ void led_task(void *pvParameters);          /* 任务函数 */
 #define KEY_STK_SIZE            128         /* 任务堆栈大小 */
 TaskHandle_t KEYTask_Handler;               /* 任务句柄 */
 void key_task(void *pvParameters);          /* 任务函数 */
+
+/* PWM_TASK 任务 配置
+ * 包括: 任务句柄 任务优先级 堆栈大小 创建任务
+ */
+#define PWM_TASK_PRIO           12          /* 任务优先级 */
+#define PWM_STK_SIZE            1024         /* 任务堆栈大小 */
+TaskHandle_t PWMTask_Handler;               /* 任务句柄 */
+void pwm_task(void *pvParameters);          /* 任务函数 */
 
 
 /* DISPLAY_TASK 任务 配置
@@ -243,6 +252,13 @@ void start_task(void *pvParameters)
 			(void*          )NULL,
 			(UBaseType_t    )ADC_TASK_PRIO,
 			(TaskHandle_t*  )&ADCTask_Handler);
+			
+	xTaskCreate((TaskFunction_t )pwm_task,
+			(const char*    )"pwm_task",
+			(uint16_t       )PWM_STK_SIZE,
+			(void*          )NULL,
+			(UBaseType_t    )PWM_TASK_PRIO,
+			(TaskHandle_t*  )&PWMTask_Handler);
 				
     vTaskDelete(StartTask_Handler); /* 删除开始任务 */
     taskEXIT_CRITICAL();            /* 退出临界区 */
@@ -298,7 +314,6 @@ void key_task(void *pvParameters)
  */
 void led_task(void *pvParameters)
 {
-	extern float angle[6];
     pvParameters = pvParameters;
 
     while (1)
@@ -331,7 +346,7 @@ void adc_task(void *pvParameters)
 #else
 	AD7616_Set_Serial_Output_Format(Serial_Line_2_Output);
 #endif
-	AD7616_Set_Range(Range_10_V);
+	AD7616_Set_Range(Range_5_V);
 	AD7616_Channel_Group_Select(Channel_Group_0);
 	AD7616_Reset();
 #endif
@@ -367,5 +382,49 @@ void adc_task(void *pvParameters)
   }
 
 
+}
+
+/**
+ * @brief       显示任务
+ * @param       pvParameters : 传入参数(未用到)
+ * @retval      无
+ */
+void pwm_task(void *pvParameters)
+{
+    pvParameters = pvParameters;
+	
+	float* fbuf;
+	
+    extern TIM_HandleTypeDef g_tim9_handler;
+	extern TIM_HandleTypeDef g_tim3_handler,g_tim1_handler;
+	
+	__HAL_TIM_SET_COMPARE(&g_tim9_handler, T1_TIMX_CHY, 0);    /* 输出新的PWM占空比 */  // PA3
+	__HAL_TIM_SET_COMPARE(&g_tim3_handler, T2_TIMX_CHY, 0);                            // PA6
+	__HAL_TIM_SET_COMPARE(&g_tim1_handler, T3_TIMX_CHY, 0);                             // PA11
+	
+    while (1)
+    {		
+		fbuf = malloc(200);
+        
+        if (g_display_queue != NULL)
+        {
+            memset(fbuf,0,200);
+            if (xQueueReceive(g_display_queue,fbuf,portMAX_DELAY))
+            {
+				// 获取数据处理数据
+				printf("data: %.2f,%.2f,%.2f\n",fbuf[0],fbuf[1],fbuf[2]);
+				
+				__HAL_TIM_SET_COMPARE(&g_tim9_handler, T1_TIMX_CHY, fbuf[0]*100);    /* 输出新的PWM占空比 */  // PA3
+				__HAL_TIM_SET_COMPARE(&g_tim3_handler, T2_TIMX_CHY, fbuf[1]*100);                            // PA6
+				__HAL_TIM_SET_COMPARE(&g_tim1_handler, T3_TIMX_CHY, fbuf[2]*100);                             // PA11
+				
+				
+            }
+        }
+        
+		free(fbuf);
+        
+        vTaskDelay(1);
+    }
 }
    

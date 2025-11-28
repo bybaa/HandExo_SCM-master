@@ -69,7 +69,7 @@ void Sensor_GPIO(void)
   	GPIO_InitStructure.Speed = GPIO_SPEED_FREQ_HIGH;
   	HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);
 	
-	GPIO_InitStructure.Pin   = GPIO_PIN_2;									//PB4:DIO1
+	GPIO_InitStructure.Pin   = GPIO_PIN_4;									//PB4:DIO1
   	GPIO_InitStructure.Mode  = GPIO_MODE_INPUT;       
   	GPIO_InitStructure.Speed = GPIO_SPEED_FREQ_HIGH;
   	HAL_GPIO_Init(GPIOB, &GPIO_InitStructure);

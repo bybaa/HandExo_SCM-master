@@ -38,6 +38,7 @@
 "..\..\output\sensor.o"
 "..\..\output\adc.o"
 "..\..\output\ad7616.o"
+"..\..\output\pwm.o"
 "..\..\output\usmart.o"
 "..\..\output\usmart_config.o"
 "..\..\output\usmart_port.o"

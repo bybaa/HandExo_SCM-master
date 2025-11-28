@@ -96,3 +96,4 @@
 ..\..\output\main.o: ..\..\User\freertos_demo.h
 ..\..\output\main.o: ..\..\Drivers\./BSP/SENSOR/sensor.h
 ..\..\output\main.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\math.h
+..\..\output\main.o: ..\..\Drivers\BSP/PWM/PWM.h

@@ -94,11 +94,11 @@
 ..\..\output\lwip_demo.o: ..\..\Middlewares\FreeRTOS\include\task.h
 ..\..\output\lwip_demo.o: ..\..\Middlewares\FreeRTOS\include\list.h
 ..\..\output\lwip_demo.o: ..\..\Middlewares\FreeRTOS\include\queue.h
-..\..\output\lwip_demo.o: ..\..\Drivers\./BSP/LCD/lcd.h
-..\..\output\lwip_demo.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+..\..\output\lwip_demo.o: ..\..\Middlewares\FreeRTOS\include\semphr.h
 ..\..\output\lwip_demo.o: ..\..\Middlewares\lwip\src\include\lwip/sockets.h
 ..\..\output\lwip_demo.o: ..\..\Middlewares\lwip\src\include\lwip/opt.h
 ..\..\output\lwip_demo.o: ..\..\Middlewares\lwip\arch\lwipopts.h
+..\..\output\lwip_demo.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\..\output\lwip_demo.o: ..\..\Middlewares\lwip\src\include\lwip/debug.h
 ..\..\output\lwip_demo.o: ..\..\Middlewares\lwip\src\include\lwip/arch.h
 ..\..\output\lwip_demo.o: ..\..\Middlewares\lwip\arch/cc.h
@@ -124,6 +124,8 @@
 ..\..\output\lwip_demo.o: ..\..\Middlewares\lwip\src\include\lwip/inet.h
 ..\..\output\lwip_demo.o: ..\..\Middlewares\lwip\src\include\lwip/errno.h
 ..\..\output\lwip_demo.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\string.h
+..\..\output\lwip_demo.o: ..\..\Drivers\./BSP/LCD/lcd.h
+..\..\output\lwip_demo.o: ..\..\Middlewares\./MALLOC/malloc.h
 ..\..\output\lwip_demo.o: ..\..\Middlewares\lwip\src\include\lwip/sys.h
 ..\..\output\lwip_demo.o: ..\..\Middlewares\lwip\arch/sys_arch.h
 ..\..\output\lwip_demo.o: ..\..\Middlewares\lwip\src\include\lwip/api.h

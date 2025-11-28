@@ -110,3 +110,4 @@
 ..\..\output\freertos_demo.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\math.h
 ..\..\output\freertos_demo.o: ..\..\Drivers\./BSP/AD7616/AD7616.h
 ..\..\output\freertos_demo.o: D:\MDK5.36\ARM\ARMCC\Bin\..\include\inttypes.h
+..\..\output\freertos_demo.o: ..\..\Drivers\BSP/PWM/PWM.h

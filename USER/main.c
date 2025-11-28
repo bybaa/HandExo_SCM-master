@@ -29,6 +29,7 @@
 #include "./MALLOC/malloc.h"
 #include "freertos_demo.h"
 #include "./BSP/SENSOR/sensor.h" 
+#include "BSP/PWM/PWM.h"
 
 int main(void)
 {
@@ -42,10 +43,17 @@ int main(void)
 //    sram_init();                        /* SRAM初始化 */
     Sensor_GPIO();
 //	lcd_init();                             /* 初始化LCD */
+	pwmdac_init(255, 0);
 	
-//    my_mem_init(SRAMIN);                /* 初始化内部SRAM内存池 */
-//    my_mem_init(SRAMEX);                /* 初始化外部SRAM内存池 */
-//    my_mem_init(SRAMCCM);               /* 初始化内部CCM内存池 */
+	extern TIM_HandleTypeDef g_tim9_handler;
+	extern TIM_HandleTypeDef g_tim3_handler,g_tim1_handler;
+	
+	__HAL_TIM_SET_COMPARE(&g_tim9_handler, T1_TIMX_CHY, 0);    /* 输出新的PWM占空比 */  // PA3
+	__HAL_TIM_SET_COMPARE(&g_tim3_handler, T2_TIMX_CHY, 0);                            // PA6
+	__HAL_TIM_SET_COMPARE(&g_tim1_handler, T3_TIMX_CHY, 0);                             // PA11
+ //   my_mem_init(SRAMIN);                /* 初始化内部SRAM内存池 */
+ //   my_mem_init(SRAMEX);                /* 初始化外部SRAM内存池 */
+ //   my_mem_init(SRAMCCM);               /* 初始化内部CCM内存池 */
 
     freertos_demo();                    /* 创建lwIP的任务函数 */
 }
